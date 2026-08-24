@@ -37,7 +37,7 @@ export default function FeaturedSectionStats() {
           </p>
         </div>
         <div>
-          <p className="text-3xl font-medium text-foreground">7 Milliard€</p>
+          <p className="text-3xl font-medium text-foreground">7 Milliards d&apos;€</p>
           <p className="text-muted-foreground text-md">
             de revenus générés par la creator economy en France en 2025
           </p>
@@ -75,10 +75,7 @@ export default function FeaturedSectionStats() {
                 borderRadius: "0.5rem",
                 color: "var(--foreground)",
               }}
-              formatter={(value: number) => [
-                `${value} 000 créateurs`,
-                "",
-              ]}
+              formatter={(value) => [`${value} 000 créateurs`, ""]}
               labelFormatter={(_label, payload) =>
                 payload?.[0]?.payload?.name ?? ""
               }
