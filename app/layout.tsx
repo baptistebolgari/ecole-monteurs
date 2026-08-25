@@ -9,8 +9,9 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "SaaS Landing Template",
-  description: "Landing Page template.",
+  title: "L'École des Monteurs",
+  description:
+    "Formez-vous au montage vidéo YouTube et lancez votre carrière de monteur professionnel.",
 };
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <body className={`${geist.className} antialiased`}>
         <Providers>
           <NavBar />
