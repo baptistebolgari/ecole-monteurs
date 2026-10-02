@@ -688,10 +688,8 @@ export default function LancementPage() {
           ]}
         />
         <p>
-          <Strong>500 €, c’est un peu moins de 2 vidéos de 10 minutes.</Strong>{" "}
-          Et même avec des tarifs de débutant, comme les 130 € de Laetitia ou
-          les 200 € de Vincent, la formation est rentabilisée entre la 3e et
-          la 4e vidéo facturée.
+          Même avec des “tarifs débutants”, la formation est rentabilisée
+          entre la 2e et 3e vidéo facturée.
         </p>
         <p>
           Au-delà de l’argent, vous investissez dans une compétence qui vous
