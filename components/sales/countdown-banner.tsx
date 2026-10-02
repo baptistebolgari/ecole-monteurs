@@ -34,7 +34,7 @@ export function CountdownBanner() {
   if (!timeLeft) return null;
 
   return (
-    <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 bg-destructive px-4 py-2 text-center text-sm font-medium text-white">
+    <div className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 bg-red-600 px-4 py-2 text-center text-sm font-medium text-white">
       <span>Fermeture des inscriptions dans</span>
       <span className="font-mono tabular-nums">
         {timeLeft.days}j {pad(timeLeft.hours)}h {pad(timeLeft.minutes)}m{" "}

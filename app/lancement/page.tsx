@@ -15,6 +15,7 @@ import {
 } from "@/components/sales/prose";
 import { PricingBox } from "@/components/sales/pricing-box";
 import { CountdownBanner } from "@/components/sales/countdown-banner";
+import { ThemeToggle } from "@/components/sales/theme-toggle";
 
 export const metadata: Metadata = {
   title: "Devenez monteur vidéo YouTube professionnel | L’École des Monteurs",
@@ -137,6 +138,7 @@ export default function LancementPage() {
   return (
     <main className="flex min-h-dvh flex-col">
       <CountdownBanner />
+      <ThemeToggle />
       {/* Hero */}
       <div className="relative overflow-hidden">
         <section className="mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 pt-28 pb-20 text-center md:px-8">
