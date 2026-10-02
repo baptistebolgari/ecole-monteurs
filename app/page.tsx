@@ -1,3 +1,4 @@
+import NavBar from "@/components/navbar";
 import Hero from "@/components/hero";
 import Partners from "@/components/partners";
 import Testimonials from "@/components/ui/testimonial-v2";
@@ -11,6 +12,7 @@ import Footer from "@/components/footer";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-dvh">
+      <NavBar />
       <Hero />
       <Partners />
       <FeaturedSectionStats />

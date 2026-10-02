@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { ArrowRight, Check, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Partners from "@/components/partners";
+import { StatsSection } from "@/components/sales/stats-section";
+import Testimonials from "@/components/ui/testimonial-v2";
+import { FounderSection } from "@/components/sales/founder-section";
+import Faq from "@/components/faq";
 import Footer from "@/components/footer";
 import { Reveal } from "@/components/sales/reveal";
 import {
@@ -10,7 +14,7 @@ import {
   Strong,
 } from "@/components/sales/prose";
 import { PricingBox } from "@/components/sales/pricing-box";
-import { CHECKOUT } from "@/lib/checkout-links";
+import { CountdownBanner } from "@/components/sales/countdown-banner";
 
 export const metadata: Metadata = {
   title: "Devenez monteur vidéo YouTube professionnel | L’École des Monteurs",
@@ -129,25 +133,26 @@ const bonuses = [
   },
 ].filter((bonus) => bonus.confirmed);
 
-export default function AccompagnementPage() {
+export default function LancementPage() {
   return (
     <main className="flex min-h-dvh flex-col">
+      <CountdownBanner />
       {/* Hero */}
       <div className="relative overflow-hidden">
         <section className="mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 pt-28 pb-20 text-center md:px-8">
           <Reveal className="flex flex-col items-center gap-6">
             <span className="w-fit rounded-full border border-border bg-card px-2 py-1 text-sm">
-              L’École des Monteurs
+              Indépendants, salariés en reconversion...
             </span>
             <h1 className="mx-auto bg-linear-to-b from-sky-800 to-foreground bg-clip-text text-4xl font-medium tracking-tighter text-pretty text-transparent md:text-6xl dark:from-sky-100 dark:to-foreground">
-              Devenez monteur vidéo YouTube professionnel, même si vous n’avez
-              jamais ouvert un logiciel de montage
+              Lancez votre carrière de monteur vidéo spécialisé YouTube{" "}
+              <span className="underline underline-offset-4">
+                avant la fin de l’année
+              </span>
             </h1>
-            <Button size="lg" className="shadow-lg" asChild>
-              <a href={CHECKOUT.full}>
-                Rejoindre l’accompagnement <ArrowRight className="size-4" />
-              </a>
-            </Button>
+            <p className="max-w-2xl text-lg text-muted-foreground text-balance">
+              Même si vous n’avez jamais ouvert un logiciel de montage
+            </p>
           </Reveal>
         </section>
         <div className="pointer-events-none absolute inset-x-0 -top-32 flex h-full items-center justify-end">
@@ -157,7 +162,7 @@ export default function AccompagnementPage() {
         </div>
       </div>
 
-      <Section title="Les créateurs YouTube ont un problème. Vous pouvez être la solution.">
+      <Section title="Des milliers d’entreprises et créateurs ont un problème. Vous pouvez être la solution.">
         <p>La vidéo a pris le dessus sur tous les réseaux.</p>
         <p>
           Et de plus en plus de créateurs en vivent : publicités, sponsors,
@@ -180,6 +185,31 @@ export default function AccompagnementPage() {
           ]}
         />
         <p>c’est presque impossible.</p>
+        <p>Voilà quelques exemples de messages que je reçois toutes les semaines :</p>
+        <div className="mx-auto flex max-w-lg flex-col gap-6">
+          {[
+            {
+              src: "/proof/demande-1.webp",
+              alt: "Message d’un CEO d’agence proposant un poste de monteur",
+            },
+            {
+              src: "/proof/demande-2.webp",
+              alt: "Message LinkedIn d’un créateur cherchant un monteur YouTube",
+            },
+            {
+              src: "/proof/demande-3.png",
+              alt: "Message d’un client félicitant un montage et demandant des disponibilités",
+            },
+          ].map((proof) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={proof.src}
+              src={proof.src}
+              alt={proof.alt}
+              className="h-auto w-full rounded-2xl shadow-sm"
+            />
+          ))}
+        </div>
         <p>Et quand un créateur trouve ce monteur, il ne le lâche plus.</p>
         <p>
           Un bon monteur est complet avec 1 à 3 clients. Il sort du marché.
@@ -190,6 +220,8 @@ export default function AccompagnementPage() {
           centaines de clients. <Strong>1 à 3 suffisent pour en vivre.</Strong>
         </Callout>
       </Section>
+
+      <StatsSection />
 
       <Section title="Le vrai problème">
         <p>
@@ -290,6 +322,58 @@ export default function AccompagnementPage() {
       </Section>
 
       <Section
+        title={
+          <>
+            La vague va devenir de plus en plus grosse,
+            <br />
+            c’est le moment de la prendre
+          </>
+        }
+      >
+        <p>
+          Il y a régulièrement de nouvelles opportunités pour gagner votre vie
+          en ligne. Mais toutes n’ont pas le même potentiel.
+        </p>
+        <p>
+          Certaines paraissent attrayantes, mais ne sont en fait que très
+          limitées dans le temps. Elles ne reposent sur rien de solide (qui se
+          rappelle des NFT ?)
+        </p>
+        <p>
+          D’autres, à l’inverse, ont pour vocation à grossir et ne
+          disparaîtront pas. C’est le cas du montage vidéo. Vous êtes au tout
+          début d’une belle aventure.
+        </p>
+        <p>
+          Sautez maintenant sur cette opportunité, et vous vous assurerez une
+          avance considérable sur la concurrence. Bien sûr, il y aura toujours
+          de la place plus tard. Je suis prêt à parier qu’il manquera toujours
+          d’excellents monteurs vidéo. Mais plus tôt vous arriverez sur le
+          marché, et plus grandes seront vos opportunités.
+        </p>
+        <p>
+          Vous pourrez devenir avec moins d’effort une référence, et choisir
+          vos clients de rêves plus facilement.
+        </p>
+        <p>Si vous souhaitez faire une activité qui vous permet :</p>
+        <ArrowList
+          items={[
+            "D’être libre de vos horaires et de l’endroit où vous travaillez,",
+            "D’exprimer votre créativité, et participer au succès de vos YouTubers préférés,",
+            "De gagner votre vie confortablement, sans travailler 50 heures par semaine.",
+          ]}
+        />
+        <p>
+          Le chemin le plus simple est ici. Rejoignez L’École Des Monteurs, et
+          vous serez accompagné de A à Z vers votre nouvelle vie (par des
+          personnes qui ont déjà accompli ce que vous souhaitez avoir).
+        </p>
+        <p>
+          <Strong>Prenez place, et surfez la vague.</Strong>
+        </p>
+      </Section>
+
+      <Section
         eyebrow="Le plan en 3 étapes"
         title="Votre plan pour les 90 prochains jours"
       >
@@ -331,7 +415,14 @@ export default function AccompagnementPage() {
 
       <Section title="Ils partaient de zéro">
         <div className="grid gap-4">
-          <div className="rounded-3xl border border-border bg-card p-6 sm:p-8">
+          <div className="overflow-hidden rounded-3xl border border-border bg-card">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/students/laetitia-call.webp"
+              alt="Appel entre Baptiste et Laetitia, élève de l’École des Monteurs"
+              className="w-full"
+            />
+            <div className="p-6 sm:p-8">
             <h3 className="text-lg font-semibold text-foreground">
               Laetitia travaillait dans une grande surface.
             </h3>
@@ -346,7 +437,7 @@ export default function AccompagnementPage() {
                     <Strong>Son premier client :</Strong> elle a appliqué la
                     méthode de prospection de la formation. Elle a remonté
                     l’intro d’une vidéo d’un créateur, puis la lui a envoyée par
-                    mail. Première vidéo facturée : 130 €.
+                    mail.
                   </>,
                   <>
                     <Strong>Son deuxième client :</Strong> grâce aux missions
@@ -354,15 +445,22 @@ export default function AccompagnementPage() {
                   </>,
                   <>
                     <Strong>Aujourd’hui :</Strong> 3 clients réguliers
-                    (publicités, podcast, Reels), jusqu’à 3 600 € dans ses
-                    meilleurs mois, et environ 10 000 € générés grâce au
-                    montage.
+                    (publicités, podcast, Reels) qui la payent 3 600 € par
+                    mois.
                   </>,
                 ]}
               />
             </div>
+            </div>
           </div>
-          <div className="rounded-3xl border border-border bg-card p-6 sm:p-8">
+          <div className="overflow-hidden rounded-3xl border border-border bg-card">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/students/vincent-call.webp"
+              alt="Appel entre Vincent, élève de l’École des Monteurs, et Baptiste"
+              className="w-full"
+            />
+            <div className="p-6 sm:p-8">
             <h3 className="text-lg font-semibold text-foreground">
               Vincent était au chômage.
             </h3>
@@ -374,10 +472,6 @@ export default function AccompagnementPage() {
               <ArrowList
                 items={[
                   <>
-                    <Strong>Sa première vidéo facturée :</Strong> 200 € pour 12
-                    minutes. Il y avait passé 4 jours.
-                  </>,
-                  <>
                     <Strong>Son plus gros client :</Strong> une chaîne YouTube
                     trouvée grâce à une annonce relayée aux élèves.
                   </>,
@@ -388,6 +482,7 @@ export default function AccompagnementPage() {
                 ]}
               />
             </div>
+            </div>
           </div>
         </div>
         <p className="text-sm">
@@ -396,6 +491,10 @@ export default function AccompagnementPage() {
           cette formation.
         </p>
       </Section>
+
+      <Partners />
+
+      <Testimonials id="avis-1" />
 
       <Section
         eyebrow="L’École des Monteurs : la formation"
@@ -522,7 +621,19 @@ export default function AccompagnementPage() {
             </ul>
           </div>
         </div>
+        <p className="mt-6 text-center">
+          Vous souhaitez bénéficier de l’accompagnement complet ? Vous pouvez{" "}
+          <a
+            href="https://calendly.com/maxime-ecoledesmonteurs/15min"
+            className="text-light underline underline-offset-4 hover:opacity-80"
+          >
+            prendre rendez-vous ici
+          </a>
+          .
+        </p>
       </Section>
+
+      <FounderSection />
 
       <Section title="Pourquoi la formation est accessible sans appel (et seulement jusqu’à dimanche)">
         <p>
@@ -555,7 +666,7 @@ export default function AccompagnementPage() {
         </p>
       </Section>
 
-      <Section eyebrow="La rentabilité" title="600 €, qu’est-ce que ça représente ?">
+      <Section eyebrow="La rentabilité" title="500 €, qu’est-ce que ça représente ?">
         <p>Voici ce que les créateurs paient couramment pour un montage :</p>
         <ArrowList
           items={[
@@ -575,10 +686,10 @@ export default function AccompagnementPage() {
           ]}
         />
         <p>
-          <Strong>600 €, c’est 2 vidéos de 10 minutes.</Strong> Et même avec des
-          tarifs de débutant, comme les 130 € de Laetitia ou les 200 € de
-          Vincent, la formation est rentabilisée entre la 3e et la 5e vidéo
-          facturée.
+          <Strong>500 €, c’est un peu moins de 2 vidéos de 10 minutes.</Strong>{" "}
+          Et même avec des tarifs de débutant, comme les 130 € de Laetitia ou
+          les 200 € de Vincent, la formation est rentabilisée entre la 3e et
+          la 4e vidéo facturée.
         </p>
         <p>
           Au-delà de l’argent, vous investissez dans une compétence qui vous
@@ -589,7 +700,10 @@ export default function AccompagnementPage() {
 
       <PricingBox />
 
-      <Footer />
+      <Testimonials />
+      <Faq showCallCta />
+
+      <Footer socialTitle="Réseaux sociaux" />
     </main>
   );
 }

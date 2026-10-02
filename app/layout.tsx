@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
-import NavBar from "@/components/navbar";
 import { Geist } from "next/font/google";
 
 const geist = Geist({
@@ -22,10 +21,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={`${geist.className} antialiased`}>
-        <Providers>
-          <NavBar />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

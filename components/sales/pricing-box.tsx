@@ -2,7 +2,13 @@ import { ArrowRight, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CHECKOUT } from "@/lib/checkout-links";
 
-export function PricingBox({ id }: { id?: string }) {
+export function PricingBox({
+  id,
+  showQuestionLink = true,
+}: {
+  id?: string;
+  showQuestionLink?: boolean;
+}) {
   return (
     <div id={id} className="mx-auto w-full max-w-3xl px-4 py-12">
       <div className="relative flex flex-col items-center gap-y-5 border-y border-light/30 bg-[radial-gradient(35%_80%_at_25%_0%,--theme(--color-light/.16),transparent)] px-4 py-10 text-center">
@@ -25,21 +31,27 @@ export function PricingBox({ id }: { id?: string }) {
         <div className="pointer-events-none absolute -inset-y-6 left-0 w-px border-l border-light/30" />
         <div className="pointer-events-none absolute -inset-y-6 right-0 w-px border-r border-light/30" />
 
+        <span className="text-xs font-semibold uppercase tracking-widest text-light">
+          Prix de lancement
+        </span>
+
+        <p className="text-4xl font-bold text-foreground">500 €</p>
+
         <Button size="lg" asChild>
           <a href={CHECKOUT.full}>
             Je rejoins la formation <ArrowRight className="size-4" />
           </a>
         </Button>
 
-        <p className="text-lg font-medium text-foreground">
-          600 € · ou{" "}
+        <p className="text-sm text-muted-foreground">
+          Paiement disponible en{" "}
           <a
             href={CHECKOUT.twice}
             className="text-light underline underline-offset-4 hover:opacity-80"
           >
-            2 × 300 €
+            2 × 275 €
           </a>{" "}
-          · ou{" "}
+          ou{" "}
           <a
             href={CHECKOUT.thrice}
             className="text-light underline underline-offset-4 hover:opacity-80"
@@ -49,8 +61,17 @@ export function PricingBox({ id }: { id?: string }) {
         </p>
 
         <p className="text-sm text-muted-foreground">
-          Accès immédiat et à vie · Paiement sécurisé · Fermeture dimanche 23h59
+          Accès immédiat et à vie · Paiement sécurisé
         </p>
+
+        {showQuestionLink && (
+          <a
+            href="#faq"
+            className="text-sm text-muted-foreground underline underline-offset-4 hover:text-light"
+          >
+            J’ai une question
+          </a>
+        )}
       </div>
     </div>
   );

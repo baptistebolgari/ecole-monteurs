@@ -153,11 +153,15 @@ function TestimonialsColumn(props: {
   );
 }
 
-export default function TestimonialsV2() {
+export default function TestimonialsV2({
+  id = "testimonials",
+}: {
+  id?: string;
+}) {
   return (
     <section
-      id="testimonials"
-      aria-labelledby="testimonials-heading"
+      id={id}
+      aria-labelledby={`${id}-heading`}
       className="bg-transparent py-16 sm:py-24 relative overflow-hidden"
     >
       <motion.div
@@ -175,7 +179,7 @@ export default function TestimonialsV2() {
           </div>
 
           <h2
-            id="testimonials-heading"
+            id={`${id}-heading`}
             className="text-3xl md:text-4xl font-bold tracking-tighter mt-6 text-center text-foreground transition-colors"
           >
             Ce que disent nos élèves

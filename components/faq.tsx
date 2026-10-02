@@ -5,9 +5,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { PricingBox } from "@/components/sales/pricing-box";
 import { motion } from "framer-motion";
 
-export default function Faq() {
+export default function Faq({
+  showCallCta = false,
+}: {
+  showCallCta?: boolean;
+}) {
   const accordionItems = [
     {
       title: "La formation est-elle adaptée si je débute ?",
@@ -249,6 +254,7 @@ export default function Faq() {
 
   return (
     <motion.section
+      id="faq"
       initial={{ y: 20, opacity: 0 }}
       whileInView={{
         y: 0,
@@ -282,6 +288,21 @@ export default function Faq() {
           ))}
         </Accordion>
       </div>
+      {showCallCta && (
+        <div className="flex w-full flex-col items-center gap-2">
+          <p className="text-center text-lg font-medium text-foreground">
+            Une question ?
+            <br />
+            <a
+              href="https://calendly.com/maxime-ecoledesmonteurs/15min"
+              className="text-light underline underline-offset-4 hover:opacity-80"
+            >
+              Réservez un appel avec un membre de l’équipe
+            </a>
+          </p>
+          <PricingBox showQuestionLink={false} />
+        </div>
+      )}
     </motion.section>
   );
 }

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
 
-const Footer = () => {
+const Footer = ({ socialTitle = "Social" }: { socialTitle?: string }) => {
   const year = new Date().getFullYear();
 
   const socialLinks = [
@@ -42,7 +42,7 @@ const Footer = () => {
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold">Social</h3>
+              <h3 className="text-sm font-semibold">{socialTitle}</h3>
               <div className="flex gap-2">
                 {socialLinks.map((social) => (
                   <Button
