@@ -2,7 +2,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Lightbulb, Play } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  Download,
+  Lightbulb,
+  Play,
+} from "lucide-react";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { TutoCta } from "@/components/tuto-cta";
@@ -77,6 +83,32 @@ export default async function TutoPage({ params }: Props) {
                   <strong className="font-semibold">Astuce : </strong>
                   {tuto.tip}
                 </p>
+              </div>
+            )}
+
+            {tuto.resources && (
+              <div className="mt-8">
+                <span className="mb-4 block text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+                  Ressources
+                </span>
+                <ul className="flex flex-col gap-3">
+                  {tuto.resources.map((r) => (
+                    <li key={r.href}>
+                      <a
+                        href={r.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-mint-d"
+                      >
+                        <Download className="size-5 shrink-0 text-mint-d" />
+                        <span className="flex-1 font-medium leading-relaxed">
+                          {r.label}
+                        </span>
+                        <ArrowUpRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
           </section>

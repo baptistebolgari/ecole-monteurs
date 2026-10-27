@@ -7,6 +7,7 @@ export type Tuto = {
   intro: string;
   steps: string[];
   tip?: string;
+  resources?: { label: string; href: string }[];
 };
 
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
@@ -30,6 +31,12 @@ export const TUTOS: Tuto[] = [
       "Avec la pipette de l'effet, cliquez sur la partie verte : le fond vert disparaît et l'explosion apparaît derrière le personnage.",
     ],
     tip: "Désactivez temporairement la vidéo du bas pour vérifier que tout le vert a bien été supprimé.",
+    resources: [
+      {
+        label: "Télécharger le green screen d'explosion utilisé dans la vidéo",
+        href: "https://www.youtube.com/watch?v=QmV14LtCBRY",
+      },
+    ],
   },
   {
     slug: "flouter-des-visages",
