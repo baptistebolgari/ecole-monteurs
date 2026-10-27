@@ -13,7 +13,7 @@ export function FounderSection() {
         <div className="relative mx-auto w-full max-w-xs overflow-hidden rounded-2xl shadow-2xl shadow-black/20 md:mx-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/eleve-montage.jpg"
+            src="/baptiste.webp"
             alt="Baptiste, fondateur de l’École des Monteurs"
             className="h-auto w-full object-cover"
           />

@@ -11,7 +11,7 @@ export default function AboutSection() {
         <div className="relative w-full shrink-0 overflow-hidden rounded-2xl md:max-w-sm">
           <img
             className="w-full rounded-2xl object-cover"
-            src="/eleve-montage.jpg"
+            src="/baptiste.webp"
             alt="Élève en train de monter une vidéo"
           />
           <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl border border-border bg-background/95 p-3 pr-4 backdrop-blur">
