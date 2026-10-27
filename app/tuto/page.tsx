@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { TUTOS } from "@/lib/tutos";
@@ -15,16 +15,23 @@ export default function TutosPage() {
   return (
     <main className="flex flex-col min-h-dvh">
       <NavBar />
-      <section className="max-w-6xl w-full mx-auto px-4 pt-16 pb-24 md:px-8">
-        <div className="flex flex-col items-center text-center space-y-5 max-w-3xl mx-auto">
-          <span className="w-fit text-sm bg-card px-2 py-1 border border-border rounded-full">
+      <section className="mx-auto w-full max-w-6xl px-4 pt-16 pb-24 md:px-8 md:pt-24">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
+          <span className="block text-xs font-semibold tracking-widest text-muted-foreground uppercase">
             Banque de tutos
           </span>
-          <h1 className="text-4xl font-medium tracking-tighter md:text-6xl text-pretty">
-            Toutes les astuces de montage
+          <h1 className="text-balance text-4xl font-medium tracking-[-0.04em] md:text-6xl md:leading-[1.1]">
+            Toutes les{" "}
+            <strong className="font-bold">
+              astuces de <span className="hl-mint">montage</span>
+            </strong>
           </h1>
-          <p className="max-w-2xl text-lg text-muted-foreground text-balance">
-            Chaque astuce de mes shorts, expliquée pas à pas sur Premiere Pro.
+          <p className="max-w-2xl text-balance text-lg text-muted-foreground">
+            Chaque astuce de mes shorts, expliquée{" "}
+            <span className="ul-mint font-medium text-foreground">
+              pas à pas
+            </span>{" "}
+            sur Premiere Pro.
           </p>
         </div>
 
@@ -33,20 +40,21 @@ export default function TutosPage() {
             <Link
               key={tuto.slug}
               href={`/tuto/${tuto.slug}`}
-              className="group flex flex-col gap-3 rounded-xl border bg-card p-6 transition-colors hover:border-foreground/30"
+              className="group flex flex-col gap-4 rounded-3xl border border-border border-t-4 border-t-mint-d bg-card p-7 transition-transform duration-200 hover:-translate-y-1"
             >
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground bg-background px-2 py-1 border border-border rounded-full">
-                  {tuto.category}
-                </span>
-                <ArrowUpRight className="size-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
-              </div>
-              <h2 className="text-lg font-medium tracking-tight leading-snug">
+              <span className="w-fit rounded-full border border-mint-d/40 bg-mint/25 px-2.5 py-0.5 text-xs font-medium">
+                {tuto.category}
+              </span>
+              <h2 className="text-xl font-semibold leading-snug tracking-tight">
                 {tuto.title}
               </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 {tuto.summary}
               </p>
+              <span className="mt-auto inline-flex items-center gap-1.5 border-t border-border pt-4 text-sm font-semibold tracking-tight">
+                Voir le tuto
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </span>
             </Link>
           ))}
         </div>
