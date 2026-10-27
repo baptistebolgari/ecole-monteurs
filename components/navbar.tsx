@@ -1,7 +1,7 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import { Button } from "@/components/ui/button";
-import ThemeSwitcher from "@/components/theme-switcher";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -9,28 +9,35 @@ export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full transition-[background-color,backdrop-filter] duration-300 ease-out ${
+      className={`sticky top-0 z-50 w-full transition-[background-color,backdrop-filter,border-color] duration-300 ease-out ${
         isScrolled
-          ? "backdrop-blur supports-backdrop-filter:bg-background/60"
-          : "backdrop-blur-0 supports-backdrop-filter:bg-background/0"
+          ? "border-b border-border/70 backdrop-blur supports-backdrop-filter:bg-background/70"
+          : "border-b border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-end items-center h-16 space-x-4">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card py-1 pr-3.5 pl-1.5 text-[13px] font-medium tracking-tight"
+          >
+            <img
+              src="/logo-edm.webp"
+              alt=""
+              width={22}
+              height={22}
+              className="size-[22px] rounded-md"
+            />
+            L’École des Monteurs
+          </Link>
           <Button asChild size="sm">
             <Link href="https://www.instagram.com/baptiste.edm/" target="_blank">
               Instagram{" "}
@@ -49,7 +56,6 @@ export default function NavBar() {
               </svg>
             </Link>
           </Button>
-          <ThemeSwitcher />
         </div>
       </div>
     </nav>

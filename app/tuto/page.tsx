@@ -20,7 +20,7 @@ export default function TutosPage() {
           <span className="w-fit text-sm bg-card px-2 py-1 border border-border rounded-full">
             Banque de tutos
           </span>
-          <h1 className="text-4xl font-medium tracking-tighter md:text-6xl text-pretty bg-linear-to-b from-sky-800 dark:from-sky-100 to-foreground dark:to-foreground bg-clip-text text-transparent">
+          <h1 className="text-4xl font-medium tracking-tighter md:text-6xl text-pretty">
             Toutes les astuces de montage
           </h1>
           <p className="max-w-2xl text-lg text-muted-foreground text-balance">

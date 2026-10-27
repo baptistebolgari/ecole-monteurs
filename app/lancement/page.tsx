@@ -143,12 +143,12 @@ export default function LancementPage() {
       <div className="relative overflow-hidden">
         <section className="mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 pt-28 pb-20 text-center md:px-8">
           <Reveal className="flex flex-col items-center gap-6">
-            <span className="w-fit rounded-full border border-border bg-card px-2 py-1 text-sm">
+            <span className="w-fit rounded-full border border-border bg-card px-3 py-1 text-[13px] font-medium">
               Indépendants, salariés en reconversion...
             </span>
-            <h1 className="mx-auto bg-linear-to-b from-sky-800 to-foreground bg-clip-text text-4xl font-medium tracking-tighter text-pretty text-transparent md:text-6xl dark:from-sky-100 dark:to-foreground">
+            <h1 className="mx-auto text-4xl font-medium tracking-tighter text-pretty md:text-6xl">
               Lancez votre carrière de monteur vidéo spécialisé YouTube{" "}
-              <span className="underline underline-offset-4">
+              <span className="ul-mint">
                 avant la fin de l’année
               </span>
             </h1>
@@ -157,11 +157,6 @@ export default function LancementPage() {
             </p>
           </Reveal>
         </section>
-        <div className="pointer-events-none absolute inset-x-0 -top-32 flex h-full items-center justify-end">
-          <div className="flex w-3/4 items-center justify-center">
-            <div className="h-150 w-12 rounded-3xl bg-light blur-[70px] will-change-transform max-sm:rotate-15 sm:rotate-35" />
-          </div>
-        </div>
       </div>
 
       <Section title="Des milliers d’entreprises et créateurs ont un problème. Vous pouvez être la solution.">
@@ -703,7 +698,7 @@ export default function LancementPage() {
       <Testimonials />
       <Faq showCallCta />
 
-      <Footer socialTitle="Réseaux sociaux" />
+      <Footer />
     </main>
   );
 }

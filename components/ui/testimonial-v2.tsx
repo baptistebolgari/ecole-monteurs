@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 interface Testimonial {
   text: string;
@@ -78,7 +78,7 @@ function StarRating({ rating }: { rating: number }) {
               className="absolute inset-0 overflow-hidden"
               style={{ width: `${fill * 100}%` }}
             >
-              <Star className="size-4 fill-light text-light" />
+              <Star className="size-4 fill-[#f5b301] text-[#f5b301]" />
             </span>
           </span>
         );
@@ -113,33 +113,31 @@ function TestimonialsColumn(props: {
                   aria-hidden={index === 1 ? "true" : "false"}
                   tabIndex={index === 1 ? -1 : 0}
                   whileHover={{
-                    scale: 1.03,
-                    y: -8,
-                    boxShadow:
-                      "0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05)",
+                    y: -6,
                     transition: { type: "spring", stiffness: 400, damping: 17 },
                   }}
                   whileFocus={{
-                    scale: 1.03,
-                    y: -8,
-                    boxShadow:
-                      "0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05)",
+                    y: -6,
                     transition: { type: "spring", stiffness: 400, damping: 17 },
                   }}
-                  className="relative p-10 rounded-3xl border border-border shadow-lg shadow-black/5 max-w-xs w-full bg-card transition-all duration-300 cursor-default select-none group focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="group relative w-full max-w-xs cursor-default rounded-3xl border border-border border-t-4 border-t-mint-d bg-card p-8 select-none focus:ring-2 focus:ring-mint-d/40 focus:outline-none"
                 >
-                  <Quote className="absolute right-6 top-6 size-5 text-muted-foreground/20" />
-                  <blockquote className="m-0 p-0">
+                                    <blockquote className="m-0 p-0">
                     <StarRating rating={rating} />
                     <p className="text-muted-foreground leading-relaxed font-normal mt-4 mb-0 transition-colors duration-300">
                       {text}
                     </p>
-                    <footer className="mt-6 border-t border-border pt-4">
-                      <cite className="block font-semibold not-italic tracking-tight leading-5 text-foreground transition-colors duration-300">
-                        {name}
-                      </cite>
-                      <span className="text-sm italic leading-5 tracking-tight text-muted-foreground mt-0.5 transition-colors duration-300">
-                        {cohort}
+                    <footer className="mt-6 flex items-center gap-3 border-t border-border pt-4">
+                      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-mint-d text-sm font-bold text-white">
+                        {name.charAt(0)}
+                      </span>
+                      <span>
+                        <cite className="block leading-5 font-semibold tracking-tight text-foreground not-italic">
+                          {name}
+                        </cite>
+                        <span className="mt-0.5 block text-xs leading-5 text-muted-foreground italic">
+                          {cohort}
+                        </span>
                       </span>
                     </footer>
                   </blockquote>
@@ -173,14 +171,14 @@ export default function TestimonialsV2({
       >
         <div className="flex flex-col items-center justify-center max-w-xl mx-auto mb-12 sm:mb-16">
           <div className="flex justify-center">
-            <div className="border border-border py-1 px-4 rounded-full text-xs font-semibold tracking-wide uppercase text-muted-foreground bg-card/50 transition-colors">
+            <div className="rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
               Témoignages
             </div>
           </div>
 
           <h2
             id={`${id}-heading`}
-            className="text-3xl md:text-4xl font-bold tracking-tighter mt-6 text-center text-foreground transition-colors"
+            className="mt-6 text-center text-3xl font-bold tracking-[-0.04em] text-foreground md:text-4xl"
           >
             Ce que disent nos élèves
           </h2>

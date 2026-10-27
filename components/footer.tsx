@@ -1,78 +1,43 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Instagram } from "lucide-react";
 
-const Footer = ({ socialTitle = "Social" }: { socialTitle?: string }) => {
+const Footer = () => {
   const year = new Date().getFullYear();
 
-  const socialLinks = [
-    {
-      name: "Instagram",
-      href: "https://www.instagram.com/baptiste.edm/",
-      icon: Instagram,
-    },
-  ];
-
   return (
-    <footer className="w-full border-t bg-card/50">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-8"
+    <footer className="w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mx-auto flex max-w-3xl flex-col items-center gap-4 border-t border-border px-4 py-12 text-center"
+      >
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-card py-1 pr-3.5 pl-1.5 text-[13px] font-medium tracking-tight"
         >
-          <div className="grid gap-8 sm:grid-cols-2 sm:gap-10">
-            <div className="space-y-3">
-              <Link
-                href="/"
-                className="inline-block text-xl font-medium tracking-tight transition-opacity hover:opacity-80"
-              >
-                EDM
-              </Link>
-              <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-                Lancez votre carrière en apprenant une compétence (très)
-                recherchée.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h3 className="text-sm font-semibold">{socialTitle}</h3>
-              <div className="flex gap-2">
-                {socialLinks.map((social) => (
-                  <Button
-                    key={social.name}
-                    asChild
-                    variant="ghost"
-                    size="icon"
-                    className="h-9 w-9 rounded-full"
-                  >
-                    <Link
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.name}
-                    >
-                      <social.icon className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <Separator />
-
-          <div className="flex flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground sm:flex-row sm:text-left">
-            <span>© {year} EDM. Tous droits réservés.</span>
-          </div>
-        </motion.div>
-      </div>
+          <img src="/logo-edm.webp" alt="" width={22} height={22} className="size-[22px] rounded-md" />
+          L’École des Monteurs
+        </Link>
+        <p className="text-xs leading-relaxed text-muted-foreground">
+          © {year} - ecole-monteurs.com - Tous droits réservés.
+        </p>
+        <p className="max-w-xl text-[11px] leading-relaxed text-muted-foreground/80">
+          Ce site ne fait pas partie du site Web de Facebook ou de Facebook
+          Inc. De plus, ce site n’est en aucun cas approuvé par Facebook.
+          FACEBOOK est une marque commerciale de FACEBOOK, Inc.
+        </p>
+        <Link
+          href="/legal"
+          className="text-xs text-muted-foreground underline underline-offset-[3px] transition-colors hover:text-foreground"
+        >
+          Mentions légales
+        </Link>
+      </motion.div>
     </footer>
   );
 };

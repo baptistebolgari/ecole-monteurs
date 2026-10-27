@@ -1,78 +1,70 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import React from "react";
+import { ArrowRight } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-16 sm:py-24">
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-        <div className="relative shadow-2xl shadow-black/20 rounded-2xl overflow-hidden shrink-0">
+    <section className="mx-auto w-full max-w-5xl px-4 py-16 sm:py-24">
+      <div className="flex flex-col items-center gap-10 rounded-3xl border border-border p-6 md:flex-row md:p-10">
+        <div className="relative w-full shrink-0 overflow-hidden rounded-2xl md:max-w-sm">
           <img
-            className="max-w-md w-full object-cover rounded-2xl"
+            className="w-full rounded-2xl object-cover"
             src="/eleve-montage.jpg"
             alt="Élève en train de monter une vidéo"
           />
-          <div className="flex items-center gap-1 max-w-72 absolute bottom-8 left-8 bg-card border border-border p-4 rounded-xl">
-            <div className="flex -space-x-4 shrink-0">
+          <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl border border-border bg-background/95 p-3 pr-4 backdrop-blur">
+            <div className="flex shrink-0 -space-x-3.5">
               <img
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100"
                 alt=""
-                className="size-9 rounded-full border-[3px] border-card hover:-translate-y-1 transition z-10"
+                className="size-9 rounded-full border-[3px] border-background object-cover"
               />
               <img
                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100&h=100"
                 alt=""
-                className="size-9 rounded-full border-[3px] border-card hover:-translate-y-1 transition z-20"
+                className="size-9 rounded-full border-[3px] border-background object-cover"
               />
               <img
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100&h=100"
                 alt=""
-                className="size-9 rounded-full border-[3px] border-card hover:-translate-y-1 transition z-30"
+                className="size-9 rounded-full border-[3px] border-background object-cover"
               />
-              <div className="flex items-center justify-center text-xs text-primary-foreground size-9 rounded-full border-[3px] border-card bg-primary hover:-translate-y-1 transition z-40">
+              <div className="flex size-9 items-center justify-center rounded-full border-[3px] border-background bg-mint-d text-[11px] font-semibold text-white">
                 80+
               </div>
             </div>
-            <p className="text-sm font-medium text-foreground">
-              + 80 monteurs formés
-            </p>
+            <p className="text-sm font-medium">+ 80 monteurs formés</p>
           </div>
         </div>
-        <div className="text-sm text-muted-foreground max-w-lg">
-          <h2 className="text-xl uppercase font-semibold text-foreground">
-            Baptiste, le fondateur de l&apos;école
+
+        <div className="max-w-lg text-[15px] leading-relaxed text-muted-foreground">
+          <span className="mb-3 block text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+            Le fondateur
+          </span>
+          <h2 className="text-3xl font-bold tracking-[-0.04em] text-foreground">
+            Baptiste, le fondateur de{" "}
+            <span className="hl-mint">l’école</span>
           </h2>
-          <div className="w-24 h-[3px] rounded-full bg-primary mt-2"></div>
-          <p className="mt-8">
+          <p className="mt-6">
             Baptiste est le monteur de Marketing Mania depuis plus de 4 ans,
-            l&apos;une des plus grosses chaînes business en France (près de
-            500 000 abonnés). Il a monté plusieurs centaines de vidéos qui
-            cumulent environ 50 millions de vues. Il exerce toujours le
-            métier au quotidien et forme depuis 3 ans les élèves de
-            l&apos;École des Monteurs.
+            l’une des plus grosses chaînes business en France (près de 500 000
+            abonnés). Il a monté plusieurs centaines de vidéos qui cumulent
+            environ 50 millions de vues. Il exerce toujours le métier au
+            quotidien et forme depuis 3 ans les élèves de l’École des
+            Monteurs.
           </p>
           <p className="mt-4">
-            C&apos;est lui qui a mis en place la méthode enseignée aux élèves
-            pour maitriser le montage vidéo YouTube rapidement et être
+            C’est lui qui a mis en place la méthode enseignée aux élèves pour
+            maitriser le montage vidéo YouTube rapidement et être
             opérationnel en 3 mois.
           </p>
           <a
             href="https://www.ecole-monteurs.com/methode"
-            className="inline-flex items-center gap-2 mt-8 hover:-translate-y-0.5 transition bg-primary text-primary-foreground py-3 px-8 rounded-full"
+            className="mt-8 inline-flex h-11 items-center gap-2 rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-[0_18px_32px_-16px_rgba(0,0,0,0.55)] transition hover:-translate-y-0.5"
           >
-            <span>Découvrir la méthode</span>
-            <svg
-              width="13"
-              height="12"
-              viewBox="0 0 13 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.53 6.53a.75.75 0 0 0 0-1.06L7.757.697a.75.75 0 1 0-1.06 1.06L10.939 6l-4.242 4.243a.75.75 0 0 0 1.06 1.06zM0 6v.75h12v-1.5H0z"
-                fill="currentColor"
-              />
-            </svg>
+            Découvrir la méthode <ArrowRight className="size-4" />
           </a>
         </div>
       </div>
