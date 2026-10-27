@@ -12,6 +12,26 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "explosion-derriere-personnage",
+    title: "Faire apparaître une explosion derrière un personnage",
+    summary:
+      "Un effet d'explosion en green screen placé derrière votre sujet grâce au masque d'objet et à l'Incrustation Ultra.",
+    category: "Effets",
+    youtubeId: "nS7Jv4vTmrE",
+    intro:
+      "On utilise un green screen (une vidéo d'effet sur fond vert), on le glisse entre le personnage détouré et la vidéo d'origine, puis on supprime le vert.",
+    steps: [
+      "Dupliquez votre vidéo (Alt + glisser) et placez la copie deux pistes plus haut pour laisser une piste vide entre les deux : c'est là qu'ira le green screen.",
+      "Au début de la vidéo du dessus, sélectionnez l'outil Masque d'objet et cliquez sur votre personnage.",
+      "Faites un clic droit puis Passer au masque d'opacité.",
+      "Dans Opacité > Masque d'objet, cliquez sur l'icône de suivi pour détourer le personnage tout au long du plan.",
+      "Glissez votre green screen d'explosion sur la piste vide, sous le personnage détouré, et ajustez sa taille.",
+      "Appliquez l'effet Incrustation Ultra (Ultra Key) sur le green screen.",
+      "Avec la pipette de l'effet, cliquez sur la partie verte : le fond vert disparaît et l'explosion apparaît derrière le personnage.",
+    ],
+    tip: "Désactivez temporairement la vidéo du bas pour vérifier que tout le vert a bien été supprimé.",
+  },
+  {
     slug: "flouter-des-visages",
     title: "Anonymiser des visages en moins de 30 secondes",
     summary:
