@@ -24,7 +24,7 @@ export function CallToAction() {
 
         <div className="flex items-center justify-center gap-2">
           <Button size="lg" asChild>
-            <a href="https://www.ecole-monteurs.com/methode">
+            <a href="https://www.ecole-monteurs.com/video">
               Découvrir la méthode <ArrowRightIcon className="size-4" />
             </a>
           </Button>

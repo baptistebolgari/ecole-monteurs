@@ -61,7 +61,7 @@ export default function AboutSection() {
             opérationnel en 3 mois.
           </p>
           <a
-            href="https://www.ecole-monteurs.com/methode"
+            href="https://www.ecole-monteurs.com/video"
             className="mt-8 inline-flex h-11 items-center gap-2 rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-[0_18px_32px_-16px_rgba(0,0,0,0.55)] transition hover:-translate-y-0.5"
           >
             Découvrir la méthode <ArrowRight className="size-4" />

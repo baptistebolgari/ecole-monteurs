@@ -26,7 +26,7 @@ export default function Hero() {
           </span>
         </p>
         <Button size="lg" className="mt-2" asChild>
-          <a href="https://www.ecole-monteurs.com/methode">
+          <a href="https://www.ecole-monteurs.com/video">
             Découvrir la méthode <ArrowRight className="size-4" />
           </a>
         </Button>
