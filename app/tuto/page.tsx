@@ -59,7 +59,7 @@ export default function TutosPage() {
           ))}
         </div>
       </section>
-      <Footer />
+      <Footer showFacebookDisclaimer={false} />
     </main>
   );
 }

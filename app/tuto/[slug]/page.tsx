@@ -123,7 +123,7 @@ export default async function TutoPage({ params }: Props) {
           </Button>
         </div>
       </section>
-      <Footer />
+      <Footer showFacebookDisclaimer={false} />
     </main>
   );
 }

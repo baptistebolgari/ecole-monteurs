@@ -4,7 +4,11 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const Footer = () => {
+const Footer = ({
+  showFacebookDisclaimer = true,
+}: {
+  showFacebookDisclaimer?: boolean;
+}) => {
   const year = new Date().getFullYear();
 
   return (
@@ -26,11 +30,13 @@ const Footer = () => {
         <p className="text-xs leading-relaxed text-muted-foreground">
           © {year} - ecole-monteurs.com - Tous droits réservés.
         </p>
-        <p className="max-w-xl text-[11px] leading-relaxed text-muted-foreground/80">
-          Ce site ne fait pas partie du site Web de Facebook ou de Facebook
-          Inc. De plus, ce site n’est en aucun cas approuvé par Facebook.
-          FACEBOOK est une marque commerciale de FACEBOOK, Inc.
-        </p>
+        {showFacebookDisclaimer && (
+          <p className="max-w-xl text-[11px] leading-relaxed text-muted-foreground/80">
+            Ce site ne fait pas partie du site Web de Facebook ou de Facebook
+            Inc. De plus, ce site n’est en aucun cas approuvé par Facebook.
+            FACEBOOK est une marque commerciale de FACEBOOK, Inc.
+          </p>
+        )}
         <Link
           href="/legal"
           className="text-xs text-muted-foreground underline underline-offset-[3px] transition-colors hover:text-foreground"
