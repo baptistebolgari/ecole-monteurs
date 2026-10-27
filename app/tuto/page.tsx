@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { TutoCta } from "@/components/tuto-cta";
 import { TUTOS } from "@/lib/tutos";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export default function TutosPage() {
   return (
     <main className="flex flex-col min-h-dvh">
       <NavBar />
-      <section className="mx-auto w-full max-w-6xl px-4 pt-16 pb-24 md:px-8 md:pt-24">
+      <section className="mx-auto w-full max-w-6xl px-4 pt-16 pb-16 md:px-8 md:pt-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
           <span className="block text-xs font-semibold tracking-widest text-muted-foreground uppercase">
             Banque de tutos
@@ -59,6 +60,7 @@ export default function TutosPage() {
           ))}
         </div>
       </section>
+      <TutoCta />
       <Footer showFacebookDisclaimer={false} />
     </main>
   );
