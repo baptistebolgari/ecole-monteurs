@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import VideoTestimonials from "@/components/ui/video-testimonials";
 
 interface Testimonial {
   text: string;
@@ -183,6 +184,8 @@ export default function TestimonialsV2({
             Ce que disent nos élèves
           </h2>
         </div>
+
+        <VideoTestimonials />
 
         <div
           className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[740px] overflow-hidden"
