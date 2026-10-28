@@ -13,6 +13,31 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "sites-inspiration-montage",
+    title: "2 sites pour ne plus jamais manquer d'inspiration",
+    summary:
+      "Où trouver des idées de transitions, d'effets, de direction artistique et de polices quand on bloque sur un montage.",
+    category: "Inspiration",
+    youtubeId: "Ce0hAWux_PY",
+    intro:
+      "La pire chose qui puisse arriver à un monteur, c'est la panne d'inspiration. Ces deux sites vous donnent des idées en quelques minutes et vous font gagner énormément de temps.",
+    steps: [
+      "Ouvrez EyeCandy : il regroupe des inspirations de transitions, d'animations, d'effets et de compositions.",
+      "Parcourez-le quand vous ne savez pas quoi faire sur un B-roll ou un rush, pour trouver une idée qui rendra votre montage plus professionnel.",
+      "Sur Pinterest, recherchez « editing inspiration » : vous obtenez des dizaines de compositions (beaucoup de motion design, mais pas seulement).",
+      "Servez-vous-en pour choisir la direction artistique de votre montage avant de commencer : vous saurez tout de suite quel style viser.",
+      "Recherchez aussi des combinaisons de polices sur Pinterest : chaque visuel indique le nom des fontes qui vont bien ensemble.",
+    ],
+    tip: "Le choix des polices fait énormément pour le rendu professionnel d'un montage : gardez de côté les combinaisons qui vous plaisent.",
+    resources: [
+      { label: "EyeCandy", href: "https://eyecannndy.com" },
+      {
+        label: "Pinterest : « editing inspiration »",
+        href: "https://fr.pinterest.com/search/pins/?q=editing%20inspiration",
+      },
+    ],
+  },
+  {
     slug: "explosion-derriere-personnage",
     title: "Faire apparaître une explosion derrière un personnage",
     summary:
