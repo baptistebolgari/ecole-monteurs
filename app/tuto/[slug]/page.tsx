@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { NewsletterForm } from "@/components/newsletter-form";
 import { TutoCta } from "@/components/tuto-cta";
 import { TUTOS, getTuto } from "@/lib/tutos";
 
@@ -140,7 +139,6 @@ export default async function TutoPage({ params }: Props) {
         </div>
       </article>
 
-      <NewsletterForm />
       <TutoCta />
       <Footer showFacebookDisclaimer={false} />
     </main>

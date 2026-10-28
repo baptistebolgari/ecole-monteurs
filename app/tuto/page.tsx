@@ -33,6 +33,8 @@ export default function TutosPage() {
           </p>
         </div>
 
+        <NewsletterForm className="mt-12 px-0 pb-0" />
+
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {TUTOS.map((tuto) => (
             <Link
@@ -57,7 +59,6 @@ export default function TutosPage() {
           ))}
         </div>
       </section>
-      <NewsletterForm />
       <TutoCta />
       <Footer showFacebookDisclaimer={false} />
     </main>
