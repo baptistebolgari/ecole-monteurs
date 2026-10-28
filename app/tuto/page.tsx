@@ -5,7 +5,7 @@ import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { TutoCta } from "@/components/tuto-cta";
-import { TUTOS } from "@/lib/tutos";
+import { TUTOS, TUTO_TOTAL, getTutoNumber } from "@/lib/tutos";
 
 export const metadata: Metadata = {
   title: "Tutos montage Premiere Pro | L'École des Monteurs",
@@ -42,9 +42,14 @@ export default function TutosPage() {
               href={`/tuto/${tuto.slug}`}
               className="group flex flex-col gap-4 rounded-3xl border border-border border-t-4 border-t-mint-d bg-card p-7 transition-transform duration-200 hover:-translate-y-1"
             >
-              <span className="w-fit rounded-full border border-mint-d/40 bg-mint/25 px-2.5 py-0.5 text-xs font-medium">
-                {tuto.category}
-              </span>
+              <div className="flex items-center justify-between gap-3">
+                <span className="w-fit rounded-full border border-mint-d/40 bg-mint/25 px-2.5 py-0.5 text-xs font-medium">
+                  {tuto.category}
+                </span>
+                <span className="rounded-full border border-sand-d/30 bg-sand px-2.5 py-0.5 text-xs font-semibold tabular-nums text-sand-d">
+                  {getTutoNumber(tuto.slug)}/{TUTO_TOTAL}
+                </span>
+              </div>
               <h2 className="text-xl font-semibold leading-snug tracking-tight">
                 {tuto.title}
               </h2>

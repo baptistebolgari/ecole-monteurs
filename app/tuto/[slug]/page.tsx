@@ -12,7 +12,7 @@ import {
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { TutoCta } from "@/components/tuto-cta";
-import { TUTOS, getTuto } from "@/lib/tutos";
+import { TUTOS, TUTO_TOTAL, getTuto, getTutoNumber } from "@/lib/tutos";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -46,9 +46,14 @@ export default async function TutoPage({ params }: Props) {
         </Link>
 
         <header className="mt-8 flex flex-col gap-4">
-          <span className="w-fit rounded-full border border-mint-d/40 bg-mint/25 px-2.5 py-0.5 text-xs font-medium">
-            {tuto.category}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="w-fit rounded-full border border-mint-d/40 bg-mint/25 px-2.5 py-0.5 text-xs font-medium">
+              {tuto.category}
+            </span>
+            <span className="rounded-full border border-sand-d/30 bg-sand px-2.5 py-0.5 text-xs font-semibold tabular-nums text-sand-d">
+              {getTutoNumber(tuto.slug)}/{TUTO_TOTAL}
+            </span>
+          </div>
           <h1 className="text-balance text-3xl font-bold tracking-[-0.04em] md:text-5xl md:leading-[1.1]">
             {tuto.title}
           </h1>

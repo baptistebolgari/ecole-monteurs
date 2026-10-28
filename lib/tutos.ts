@@ -243,6 +243,13 @@ export const TUTOS: Tuto[] = [
   },
 ];
 
+export const TUTO_TOTAL = 30;
+
 export function getTuto(slug: string) {
   return TUTOS.find((t) => t.slug === slug);
+}
+
+// Numéro du tuto dans la série : le plus ancien est 1, chaque nouveau fait +1.
+export function getTutoNumber(slug: string) {
+  return TUTOS.length - TUTOS.findIndex((t) => t.slug === slug);
 }

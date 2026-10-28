@@ -66,6 +66,8 @@
     --light: #2fae8a;
     --mint: #86d6b8;
     --mint-d: #2fae8a;
+    --sand: #f3dfc1;
+    --sand-d: #b8661c;
     --chart-1: #2fae8a;
     --chart-2: #86d6b8;
     --chart-3: #131316;
@@ -100,6 +102,8 @@
   --color-light: var(--light);
   --color-mint: var(--mint);
   --color-mint-d: var(--mint-d);
+  --color-sand: var(--sand);
+  --color-sand-d: var(--sand-d);
 }
 
 @layer base {
