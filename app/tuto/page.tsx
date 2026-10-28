@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { NewsletterForm } from "@/components/newsletter-form";
 import { TutoCta } from "@/components/tuto-cta";
 import { TUTOS } from "@/lib/tutos";
 
@@ -18,21 +19,17 @@ export default function TutosPage() {
       <NavBar />
       <section className="mx-auto w-full max-w-6xl px-4 pt-16 pb-16 md:px-8 md:pt-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
-          <span className="block text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-            Banque de tutos
-          </span>
           <h1 className="text-balance text-4xl font-medium tracking-[-0.04em] md:text-6xl md:leading-[1.1]">
-            Toutes les{" "}
+            Toutes mes{" "}
             <strong className="font-bold">
               astuces de <span className="hl-mint">montage</span>
             </strong>
           </h1>
           <p className="max-w-2xl text-balance text-lg text-muted-foreground">
-            Chaque astuce de mes shorts, expliquée{" "}
+            Expliquées{" "}
             <span className="ul-mint font-medium text-foreground">
-              pas à pas
-            </span>{" "}
-            sur Premiere Pro.
+              étape par étape
+            </span>
           </p>
         </div>
 
@@ -60,6 +57,7 @@ export default function TutosPage() {
           ))}
         </div>
       </section>
+      <NewsletterForm />
       <TutoCta />
       <Footer showFacebookDisclaimer={false} />
     </main>
