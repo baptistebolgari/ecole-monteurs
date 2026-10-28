@@ -13,6 +13,26 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "sous-titres-automatiques",
+    title: "Générer des sous-titres automatiquement",
+    summary:
+      "Transcrire votre vidéo et créer des sous-titres synchronisés en quelques clics, puis les styliser.",
+    category: "Texte",
+    youtubeId: "1nE5y9xcftw",
+    intro:
+      "Les sous-titres sont l'un des meilleurs leviers de rétention, et Premiere Pro sait les générer tout seul à partir d'une transcription de votre rush.",
+    steps: [
+      "Ouvrez le panneau Texte (s'il n'est pas affiché : Fenêtre > Texte).",
+      "Sélectionnez le rush à transcrire, puis cliquez sur Transcrire : Premiere Pro génère automatiquement le texte de votre vidéo.",
+      "Une fois la transcription terminée, allez dans l'onglet Sous-titres et choisissez Créer des sous-titres à partir de la transcription.",
+      "Dans les réglages, baissez le nombre maximal de caractères et la durée pour des sous-titres courts qui s'enchaînent régulièrement.",
+      "Choisissez une seule ligne, puis lancez la création : les sous-titres sont automatiquement synchronisés avec la vidéo.",
+      "Pour les styliser, sélectionnez-les tous et ouvrez le panneau Propriétés : changez la police, la taille et la position.",
+      "Ajustez aussi l'espacement entre les lettres pour un rendu plus moderne.",
+    ],
+    tip: "Relisez la transcription avant de créer les sous-titres : corriger une faute à cette étape la corrige partout.",
+  },
+  {
     slug: "sites-inspiration-montage",
     title: "2 sites pour ne plus jamais manquer d'inspiration",
     summary:
