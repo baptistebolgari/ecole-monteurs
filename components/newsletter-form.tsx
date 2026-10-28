@@ -41,12 +41,12 @@ export function NewsletterForm({ className }: { className?: string }) {
           className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-48 w-2/3 -translate-x-1/2 rounded-full bg-mint-d/40 blur-[80px]"
         />
         <h2 className="text-balance text-xl font-bold tracking-[-0.04em] sm:text-2xl">
-          Rejoins <span className="text-mint">+1&nbsp;500 futurs monteurs</span>{" "}
-          vidéo&nbsp;!
+          Rejoins <span className="text-mint">+1&nbsp;500 passionnés</span> de
+          montage vidéo&nbsp;!
         </h2>
         <p className="max-w-lg text-balance text-sm text-background/70 sm:text-base">
-          Chaque semaine, je partage mon expérience de monteur vidéo
-          professionnel, mes meilleurs conseils, ou encore des
+          Chaque semaine, je te partage mon expérience de monteur vidéo
+          YouTube professionnel, mes meilleurs conseils, ou encore des
           inspirations&nbsp;!
         </p>
 

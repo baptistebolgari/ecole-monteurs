@@ -18,8 +18,8 @@ export default function TutosPage() {
     <main className="flex flex-col min-h-dvh">
       <NavBar />
       <section className="mx-auto w-full max-w-6xl px-4 pt-16 pb-16 md:px-8 md:pt-24">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
-          <h1 className="text-balance text-4xl font-medium tracking-[-0.04em] md:text-6xl md:leading-[1.1]">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 text-center">
+          <h1 className="text-balance text-4xl font-medium tracking-[-0.04em] md:text-5xl md:leading-[1.1] lg:whitespace-nowrap lg:text-6xl">
             Toutes mes{" "}
             <strong className="font-bold">
               astuces de <span className="hl-mint">montage</span>
