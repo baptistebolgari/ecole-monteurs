@@ -13,6 +13,30 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "effet-article-match-cut",
+    title: "L'effet article pour mettre un mot en avant",
+    summary:
+      "Un enchaînement rapide de captures d'article, avec le même mot qui reste fixe au centre de l'écran grâce à un match cut.",
+    category: "Effets",
+    youtubeId: "lG8saN5rQrI",
+    intro:
+      "On crée plusieurs captures d'un faux article avec des polices différentes, puis on les enchaîne très vite en gardant le mot clé exactement au même endroit : c'est ce match cut qui donne tout l'effet.",
+    steps: [
+      "Copiez un article de journal dans un Google Doc : peu importe le contenu, seule la mise en page compte (citations, italique, gras…).",
+      "Centrez le texte et placez au milieu le mot ou la phrase à mettre en avant, en gras.",
+      "Faites une capture d'écran, puis changez la police de tout le texte en vérifiant que votre mot reste bien au centre.",
+      "Répétez l'opération pour obtenir environ 4 captures avec 4 polices différentes.",
+      "Importez les captures dans Premiere Pro et enchaînez-les en donnant à chacune une durée de 4 images.",
+      "Glissez un cache couleur blanc en dessous pour masquer les bords noirs.",
+      "Activez les marges admissibles et les règles, puis tracez avec les repères une croix au centre de l'écran.",
+      "Avec la Trajectoire (position et échelle), placez une même lettre de votre mot sur ce point central pour la première image.",
+      "Copiez-collez la trajectoire sur les images suivantes et ajustez-les pour que la lettre tombe toujours exactement au même endroit.",
+      "Dupliquez la séquence de 4 images deux ou trois fois pour que l'effet dure plus longtemps.",
+      "Ajoutez un calque d'effets avec du flou et de l'aberration chromatique pour concentrer le regard sur le centre.",
+    ],
+    tip: "Choisissez un point d'ancrage précis (par exemple la première lettre du mot) : plus il est aligné d'une image à l'autre, plus le match cut est propre.",
+  },
+  {
     slug: "sous-titres-automatiques",
     title: "Générer des sous-titres automatiquement",
     summary:
