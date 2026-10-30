@@ -13,6 +13,44 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "reglages-export-youtube",
+    title: "Les meilleurs réglages d'export pour YouTube",
+    summary:
+      "Exporter votre montage en qualité maximale pour YouTube grâce au préréglage intégré à Premiere Pro.",
+    category: "Export",
+    youtubeId: "Xgv-S4yROIM",
+    intro:
+      "Pas besoin de tout régler à la main : Premiere Pro propose directement un préréglage pensé pour YouTube. Il suffit de le choisir et de vérifier deux réglages.",
+    steps: [
+      "Une fois le montage terminé, ouvrez l'onglet Exporter.",
+      "Dans Préconfiguration, choisissez Autres paramètres prédéfinis.",
+      "Sélectionnez le préréglage YouTube qui correspond au format de votre vidéo (par exemple 1080p Full HD), puis cliquez sur OK.",
+      "Vérifiez que le format est bien H.264.",
+      "Vérifiez que la fréquence d'images est en correspondance avec la source, pour exporter au même nombre d'images par seconde que vos rushs.",
+      "Ne touchez pas au reste (audio compris) et cliquez sur Exporter.",
+    ],
+  },
+  {
+    slug: "effet-surlignage-texte",
+    title: "Effet surlignage animé sur un texte",
+    summary:
+      "Surligner une phrase d'article comme au feutre, avec une animation fluide.",
+    category: "Animation",
+    youtubeId: "6WM5Y5oHYbA",
+    intro:
+      "Un cache couleur en mode de fusion Produit, limité par un masque et animé de gauche à droite : le texte a l'air d'être surligné en direct.",
+    steps: [
+      "Importez la capture d'écran de l'article contenant le texte à mettre en avant.",
+      "Créez un cache couleur jaune orangé, couleur surligneur, et placez-le au-dessus de l'article.",
+      "Dans Opacité, passez le mode de fusion du cache couleur sur Produit : il s'incruste sur l'article.",
+      "Tracez un masque rectangle autour du texte à surligner, puis faites un clic droit et Passer au masque d'opacité. Pour un rendu plus « fait main », tracez le masque à la plume.",
+      "Appliquez l'effet Déplacement au cache couleur et diminuez sa position pour le faire sortir du texte.",
+      "Au début, créez une image clé, puis allez à l'endroit où le surlignage doit se terminer et ramenez la position pour couvrir tout le texte.",
+      "Sélectionnez les deux images clés, faites un clic droit puis Interpolation temporelle > Progressif.",
+      "Ouvrez l'éditeur graphique et ajustez la courbe pour une animation plus naturelle.",
+    ],
+  },
+  {
     slug: "effet-article-match-cut",
     title: "L'effet article pour mettre un mot en avant",
     summary:
