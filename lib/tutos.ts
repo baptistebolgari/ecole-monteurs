@@ -13,6 +13,26 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "transition-scan-rayon-x",
+    title: "La transition scan rayon X",
+    summary:
+      "La transition qu'on voit partout : un flash façon radiographie entre deux plans, grâce à deux images générées par IA.",
+    category: "Transitions",
+    youtubeId: "gqMmgC2nURU",
+    intro:
+      "On exporte l'image de part et d'autre de la coupe, on la transforme en scan rayon X avec une IA, puis on intercale ces images quelques frames autour de la transition.",
+    steps: [
+      "Placez deux rushs à la suite et positionnez la tête de lecture sur la coupe entre les deux.",
+      "Cliquez sur l'icône Exporter l'image (l'appareil photo sous le moniteur ; si elle n'y est pas, ajoutez-la avec le +) pour capturer la première image du second clip, puis validez avec OK.",
+      "Reculez d'une image et exportez de la même façon la dernière image du premier clip.",
+      "Importez ces deux images dans ChatGPT (ou un autre générateur d'images) et demandez-lui de les transformer en scan rayon X.",
+      "Importez les deux images rayon X dans la timeline, au niveau de la coupe.",
+      "Depuis la coupe, comptez 3 images vers la droite et coupez l'image rayon X ; faites de même 3 images vers la gauche.",
+      "Pour styliser, ajoutez une coupe à 2 images du centre dans chaque image rayon X et appliquez l'effet Inverser sur un des morceaux : cela crée un effet de flash.",
+    ],
+    tip: "Demandez à l'IA de garder exactement le même cadrage que l'image d'origine : la transition n'en sera que plus fluide.",
+  },
+  {
     slug: "reglages-export-youtube",
     title: "Les meilleurs réglages d'export pour YouTube",
     summary:
