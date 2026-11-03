@@ -13,6 +13,24 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "effet-3d-image",
+    title: "Donner un effet 3D à une image ou une capture",
+    summary:
+      "Animer une image 2D (capture d'écran, article…) en perspective grâce à l'effet 3D simple.",
+    category: "Animation",
+    youtubeId: "dhxUmb38ehM",
+    intro:
+      "Même une image plate peut bouger en 3D : l'effet 3D simple ajoute des rotations en perspective qu'il suffit d'animer avec deux images clés.",
+    steps: [
+      "Placez votre image ou capture d'écran dans la timeline.",
+      "Appliquez-lui l'effet 3D simple.",
+      "Augmentez un peu l'échelle pour que l'image remplisse bien l'écran.",
+      "Réglez la rotation horizontale pour l'orienter sur le côté, et la rotation verticale pour l'incliner vers le bas.",
+      "Une fois la position de départ trouvée, réajustez l'échelle puis posez des images clés sur l'échelle et les rotations au début du plan.",
+      "Allez à la fin du plan et modifiez les rotations : l'image pivote en 3D tout au long de la séquence.",
+    ],
+  },
+  {
     slug: "transition-scan-rayon-x",
     title: "La transition scan rayon X",
     summary:
