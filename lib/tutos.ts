@@ -13,6 +13,25 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "contour-neon-element",
+    title: "Faire briller le contour d'un élément",
+    summary:
+      "Mettre en avant un objet de l'image avec un trait lumineux qui fait le tour de sa silhouette.",
+    category: "Masques",
+    youtubeId: "ovTa1fWKru4",
+    intro:
+      "On détoure l'élément sur une copie du plan, puis on lui applique une transition néon : un trait lumineux parcourt son contour.",
+    steps: [
+      "Dupliquez votre vidéo (Alt + glisser) au-dessus de l'original.",
+      "Sur la copie, tracez un masque autour de l'élément à mettre en avant, avec l'outil Plume ou l'outil Masque d'objet.",
+      "Faites un clic droit puis Passer au masque d'opacité : seul l'élément reste visible sur la copie.",
+      "Appliquez la transition néon sur la copie : un trait lumineux passe sur le contour de l'élément.",
+      "Cliquez sur la transition pour changer sa couleur, par exemple en blanc.",
+      "Augmentez le contour progressif du masque pour un rendu moins net.",
+      "Étirez la transition pour ajuster la durée de l'effet.",
+    ],
+  },
+  {
     slug: "effet-3d-image",
     title: "Donner un effet 3D à une image ou une capture",
     summary:
