@@ -13,6 +13,24 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "effet-flash",
+    title: "Un effet flash en moins d'une minute",
+    summary:
+      "Un flash lumineux et puissant sur un rush, avec un seul effet et deux images clés.",
+    category: "Transitions",
+    youtubeId: "enPbdEB4Kuk",
+    intro:
+      "On pousse la luminosité et le contraste au maximum, puis on les fait redescendre en quelques images : l'image « explose » avant de revenir à la normale.",
+    steps: [
+      "Placez-vous sur votre rush, au moment où le flash doit commencer.",
+      "Appliquez l'effet Luminosité et contraste et glissez-le sur le clip à cet endroit.",
+      "Montez la luminosité à 100 et le contraste à 60, puis créez une image clé sur ces deux réglages.",
+      "Avancez de quelques images (environ la moitié du clip) et redescendez la luminosité et le contraste à 0 pour retrouver l'image neutre.",
+      "Sélectionnez les images clés et appliquez-leur un Ease In.",
+      "Pour la luminosité, ajustez la courbe dans l'éditeur graphique pour rendre la descente plus franche : le flash sera beaucoup plus puissant.",
+    ],
+  },
+  {
     slug: "isoler-une-couleur",
     title: "Isoler une couleur sur un rush",
     summary:
