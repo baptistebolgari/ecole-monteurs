@@ -13,6 +13,21 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "isoler-une-couleur",
+    title: "Isoler une couleur sur un rush",
+    summary:
+      "Garder une seule couleur à l'image et passer tout le reste en noir et blanc, en un seul effet.",
+    category: "Effets",
+    youtubeId: "fYX4_2ZpIKQ",
+    intro:
+      "Pas besoin de dupliquer le rush ni de faire des masques : un seul effet suffit pour conserver une couleur et décolorer tout le reste.",
+    steps: [
+      "Appliquez l'effet Filtre chromatique sur votre rush.",
+      "Dans les réglages de l'effet, sélectionnez la couleur à isoler (par exemple le rouge), avec la pipette ou le sélecteur de couleur.",
+      "Ajustez la tolérance pour que l'effet garde exactement la couleur voulue, sans déborder sur le reste de l'image.",
+    ],
+  },
+  {
     slug: "contour-neon-element",
     title: "Faire briller le contour d'un élément",
     summary:
