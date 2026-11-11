@@ -37,12 +37,20 @@ const Footer = ({
             FACEBOOK est une marque commerciale de FACEBOOK, Inc.
           </p>
         )}
-        <Link
-          href="/legal"
-          className="text-xs text-muted-foreground underline underline-offset-[3px] transition-colors hover:text-foreground"
-        >
-          Mentions légales
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/legal"
+            className="text-xs text-muted-foreground underline underline-offset-[3px] transition-colors hover:text-foreground"
+          >
+            Mentions légales
+          </Link>
+          <Link
+            href="/cgv"
+            className="text-xs text-muted-foreground underline underline-offset-[3px] transition-colors hover:text-foreground"
+          >
+            CGV
+          </Link>
+        </div>
       </motion.div>
     </footer>
   );
