@@ -13,6 +13,27 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "effet-clonage",
+    title: "L'effet clonage : deux fois la même personne à l'écran",
+    summary:
+      "Faire apparaître un clone de votre personnage dans le même plan grâce au masque d'objet et à son suivi.",
+    category: "Masques",
+    youtubeId: "66MFgBUPTP8",
+    intro:
+      "On détoure deux fois le personnage, on place chaque copie à un endroit différent, et on pose le tout sur un plan vide du décor.",
+    steps: [
+      "Préparez deux plans filmés au même cadrage : un avec votre personnage, un sans personnage (le décor vide).",
+      "Placez le plan vide sur la piste du bas, puis le plan avec le personnage au-dessus, et dupliquez ce dernier (Alt + glisser).",
+      "Masquez la piste du haut, placez-vous au début de la timeline et, sur la copie du dessous, créez un masque d'objet sur le personnage (incluez le micro ou les objets qu'il tient).",
+      "Faites un clic droit puis Passer au masque d'opacité : en masquant le plan vide, vous voyez le personnage parfaitement détouré.",
+      "Revenez au début et, dans Opacité > Masque, cliquez sur le suivi pour que le masque suive le personnage tout au long du plan.",
+      "Déplacez ce premier personnage pour le décaler sur un côté de l'écran et laisser la place à son clone.",
+      "Réactivez la piste du haut et refaites la même chose : masque d'objet, masque d'opacité, suivi, puis déplacez ce second personnage de l'autre côté.",
+      "Réactivez toutes les pistes : les deux versions du personnage apparaissent ensemble dans le même décor.",
+    ],
+    tip: "Filmez les deux plans sur trépied, sans bouger la caméra : le décor vide doit correspondre exactement au plan avec le personnage.",
+  },
+  {
     slug: "effet-flash",
     title: "Un effet flash en moins d'une minute",
     summary:
