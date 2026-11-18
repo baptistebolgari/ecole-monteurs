@@ -13,6 +13,24 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "creer-des-proxys",
+    title: "Les proxys : monter sans faire planter son ordinateur",
+    summary:
+      "Travailler sur une version allégée de vos rushs pour un montage fluide, sans perdre en qualité à l'export.",
+    category: "Performance",
+    youtubeId: "DyvWaTMx1oo",
+    intro:
+      "Des fichiers trop lourds font ramer, voire planter, votre projet. Les proxys (doublures) sont des copies basse qualité de vos rushs : vous montez dessus, et Premiere Pro repasse automatiquement sur les originaux à l'export.",
+    steps: [
+      "Faites un clic droit sur votre rush, puis Doublure > Créer des doublures.",
+      "Réglez la taille de l'image (1/4 par exemple) et choisissez l'emplacement où enregistrer les doublures.",
+      "Cliquez sur OK : Media Encoder s'ouvre et génère automatiquement la version basse qualité de votre rush.",
+      "Sous le moniteur de programme, cliquez sur le + et ajoutez le bouton qui active ou désactive les doublures.",
+      "Activez ce bouton pour monter sur la version légère ; désactivez-le pour revoir la pleine qualité.",
+    ],
+    tip: "Pas besoin de désactiver les doublures avant d'exporter : Premiere Pro utilise automatiquement les fichiers originaux en pleine qualité.",
+  },
+  {
     slug: "effet-clonage",
     title: "L'effet clonage : deux fois la même personne à l'écran",
     summary:
