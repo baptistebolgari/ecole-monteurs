@@ -13,6 +13,28 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "sites-b-roll-scenes-de-films",
+    title: "2 sites pour trouver des scènes de films en B-roll",
+    summary:
+      "Retrouver en quelques secondes la scène de film parfaite pour illustrer votre montage, par description ou par réplique.",
+    category: "Inspiration",
+    youtubeId: "fKy02jQYnnY",
+    intro:
+      "Ne plus trouver le bon B-roll est le cauchemar du monteur. Ces deux sites permettent de retrouver des scènes de films et de les télécharger pour vos inserts.",
+    steps: [
+      "Ouvrez Clip.Cafe : il répertorie les plus grands films, avec toutes leurs scènes découpées.",
+      "Cherchez une scène en tapant une description, une citation ou le titre du film, puis téléchargez-la en HD.",
+      "Ouvrez PlayPhrase.me : ici, la recherche se fait à partir des répliques des films.",
+      "Tapez une phrase (par exemple « merci beaucoup ») : le site vous propose les scènes où elle est prononcée.",
+      "Utilisez ces extraits comme inserts, en écho à ce qui est dit dans votre script, pour couper la vidéo et créer du rythme.",
+    ],
+    tip: "Les scènes de films sont protégées par le droit d'auteur : utilisez-les en extraits courts et vérifiez ce qu'autorise la plateforme où vous publiez.",
+    resources: [
+      { label: "Clip.Cafe", href: "https://clip.cafe" },
+      { label: "PlayPhrase.me", href: "https://www.playphrase.me" },
+    ],
+  },
+  {
     slug: "creer-des-proxys",
     title: "Les proxys : monter sans faire planter son ordinateur",
     summary:
