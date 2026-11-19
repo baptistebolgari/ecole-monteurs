@@ -28,7 +28,7 @@ export const TUTOS: Tuto[] = [
       "Tapez une phrase (par exemple « merci beaucoup ») : le site vous propose les scènes où elle est prononcée.",
       "Utilisez ces extraits comme inserts, en écho à ce qui est dit dans votre script, pour couper la vidéo et créer du rythme.",
     ],
-    tip: "Vous pouvez utiliser ces scènes de films à des fins d'illustration, en B-roll. Si vous les utilisez comme insert, gardez-les sous 5 secondes : au-delà, les ayants droit peuvent réclamer des droits d'auteur.",
+    tip: "Vous pouvez utiliser ces scènes de films à des fins d'illustration, en B-roll. Si vous les utilisez comme insert, gardez-les courts, idéalement sous 5 secondes, pour limiter le risque de réclamation de droits d'auteur.",
     resources: [
       { label: "Clip.Cafe", href: "https://clip.cafe" },
       { label: "PlayPhrase.me", href: "https://www.playphrase.me" },
