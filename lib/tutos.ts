@@ -28,7 +28,7 @@ export const TUTOS: Tuto[] = [
       "Tapez une phrase (par exemple « merci beaucoup ») : le site vous propose les scènes où elle est prononcée.",
       "Utilisez ces extraits comme inserts, en écho à ce qui est dit dans votre script, pour couper la vidéo et créer du rythme.",
     ],
-    tip: "Les scènes de films sont protégées par le droit d'auteur : utilisez-les en extraits courts et vérifiez ce qu'autorise la plateforme où vous publiez.",
+    tip: "Vous pouvez utiliser ces scènes de films à des fins d'illustration, en B-roll. Si vous les utilisez comme insert, gardez-les sous 5 secondes : au-delà, les ayants droit peuvent réclamer des droits d'auteur.",
     resources: [
       { label: "Clip.Cafe", href: "https://clip.cafe" },
       { label: "PlayPhrase.me", href: "https://www.playphrase.me" },
