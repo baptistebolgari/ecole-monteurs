@@ -13,6 +13,23 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "partager-projet-premiere-pro",
+    title: "Partager un projet Premiere Pro sans perdre de fichiers",
+    summary:
+      "Envoyer un projet complet à un autre monteur, avec tous ses médias, grâce au gestionnaire de projet.",
+    category: "Organisation",
+    youtubeId: "__lzZNQ5ysM",
+    intro:
+      "Quand on envoie un projet, il manque presque toujours des fichiers. Le gestionnaire de projet copie le projet et tous les médias utilisés dans un seul dossier : la personne qui le reçoit n'a plus qu'à l'ouvrir.",
+    steps: [
+      "Dans la barre de menus, allez dans Fichier > Gestionnaire de projet.",
+      "Cochez toutes les séquences que vous voulez partager (attention à n'en oublier aucune).",
+      "Choisissez l'emplacement où créer le dossier de copie, par exemple le Bureau.",
+      "Cliquez sur OK : Premiere Pro crée une copie du projet avec tous les éléments utilisés dedans.",
+      "Envoyez ce dossier : votre collaborateur ouvre le fichier Premiere Pro et tous les médias sont retrouvés automatiquement.",
+    ],
+  },
+  {
     slug: "sites-b-roll-scenes-de-films",
     title: "2 sites pour trouver des scènes de films en B-roll",
     summary:
