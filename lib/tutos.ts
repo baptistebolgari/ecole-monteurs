@@ -13,6 +13,27 @@ export type Tuto = {
 // Le plus récent en premier. Pour ajouter un tuto : ajouter une entrée en haut de la liste.
 export const TUTOS: Tuto[] = [
   {
+    slug: "inspiration-mise-en-scene-b-roll",
+    title: "2 sites pour trouver des idées de mise en scène",
+    summary:
+      "Trouver l'inspiration pour vos B-rolls, filmés, tirés de films ou générés par IA, grâce à Pinterest et Flim.",
+    category: "Inspiration",
+    youtubeId: "DH1NGQlqifA",
+    intro:
+      "Pour ne plus jamais être en panne d'idées, ces deux sites vous donnent des références de mise en scène à reproduire dans vos B-rolls, qu'ils soient tirés de films ou générés par IA.",
+    steps: [
+      "Sur Pinterest, cherchez des inspirations de mise en scène pour vos B-rolls.",
+      "Cliquez sur une scène qui vous plaît : Pinterest vous propose ensuite des scènes similaires, idéal pour garder un ensemble cohérent.",
+      "Ouvrez Flim : un moteur de recherche d'images tirées de films.",
+      "Tapez l'idée que vous voulez illustrer, par exemple « réflexion » : Flim vous propose des plans de films qui la mettent en scène.",
+      "Servez-vous de ces références pour composer vos B-rolls, que vous les filmiez, les cherchiez dans des films ou les génériez en IA.",
+    ],
+    resources: [
+      { label: "Pinterest", href: "https://fr.pinterest.com" },
+      { label: "Flim", href: "https://flim.ai" },
+    ],
+  },
+  {
     slug: "partager-projet-premiere-pro",
     title: "Partager un projet Premiere Pro sans perdre de fichiers",
     summary:
