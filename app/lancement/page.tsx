@@ -632,7 +632,7 @@ export default function LancementPage() {
 
       <FounderSection />
 
-      <Section title="Pourquoi la formation est accessible sans appel (et seulement jusqu’à dimanche)">
+      <Section title="Pourquoi la formation est accessible sans appel (et seulement jusqu’à vendredi)">
         <p>
           Jusqu’ici, l’École des Monteurs n’était accessible que sur appel. La
           raison : c’est avant tout un accompagnement, et l’appel sert à
@@ -658,7 +658,7 @@ export default function LancementPage() {
         </p>
         <p>
           C’est un test, donc aucune décision n’est prise sur l’avenir de cette
-          version. <Strong>Dimanche à 23h59, cette page ferme.</Strong> Ensuite,
+          version. <Strong>Vendredi à 23h59, cette page ferme.</Strong> Ensuite,
           l’École redevient accessible uniquement sur appel.
         </p>
       </Section>

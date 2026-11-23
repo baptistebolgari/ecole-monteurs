@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-// Dimanche 11 octobre 2026, 23h59 heure de Paris (UTC+2 en octobre).
-const DEADLINE = new Date("2026-10-11T21:59:59Z");
+// Vendredi 27 novembre 2026, 23h59 heure de Paris (UTC+1 en novembre).
+const DEADLINE = new Date("2026-11-27T22:59:59Z");
 
 function getTimeLeft() {
   const diff = DEADLINE.getTime() - Date.now();
