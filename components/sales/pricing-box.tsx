@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CHECKOUT } from "@/lib/checkout-links";
 
@@ -25,6 +25,18 @@ export function PricingBox({
           </a>
         </Button>
 
+        <a
+          href="#garantie"
+          className="flex w-full max-w-md items-center gap-4 rounded-2xl border border-mint-d/50 bg-background/70 p-4 transition-colors hover:border-mint-d hover:bg-background"
+        >
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-mint-d text-white">
+            <ShieldCheck className="size-6" />
+          </span>
+          <span className="flex-1 text-center text-base font-semibold text-foreground">
+            Garantie remboursement 14 jours
+          </span>
+        </a>
+
         <p className="text-sm text-muted-foreground">
           Paiement disponible en{" "}
           <span className="font-medium text-foreground">2 × 275 €</span> ou{" "}
@@ -34,7 +46,6 @@ export function PricingBox({
         <p className="text-sm text-muted-foreground">
           Accès immédiat et à vie · Paiement sécurisé
         </p>
-
         {showQuestionLink && (
           <a
             href="#faq"

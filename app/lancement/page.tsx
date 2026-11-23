@@ -693,6 +693,13 @@ export default function LancementPage() {
         </p>
       </Section>
 
+      <Section id="garantie" eyebrow="La garantie" title="Garantie 14 jours : vous ne prenez aucun risque">
+        <p>
+          Si vous avez regardé moins de 20 % de la formation, vous pouvez vous
+          faire rembourser dans les 14 jours suivant votre achat.
+        </p>
+      </Section>
+
       <PricingBox />
 
       <Testimonials />

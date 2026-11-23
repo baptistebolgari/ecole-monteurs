@@ -16,7 +16,7 @@ export function Section({
   return (
     <section
       id={id}
-      className="mx-auto w-full max-w-3xl px-4 py-14 sm:py-20"
+      className="mx-auto w-full max-w-3xl scroll-mt-12 px-4 py-14 sm:py-20"
     >
       <Reveal>
         {eyebrow && (
