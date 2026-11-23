@@ -27,19 +27,8 @@ export function PricingBox({
 
         <p className="text-sm text-muted-foreground">
           Paiement disponible en{" "}
-          <a
-            href={CHECKOUT.twice}
-            className="ul-mint font-medium text-foreground hover:opacity-80"
-          >
-            2 × 275 €
-          </a>{" "}
-          ou{" "}
-          <a
-            href={CHECKOUT.thrice}
-            className="ul-mint font-medium text-foreground hover:opacity-80"
-          >
-            3 × 200 €
-          </a>
+          <span className="font-medium text-foreground">2 × 275 €</span> ou{" "}
+          <span className="font-medium text-foreground">3 × 200 €</span>
         </p>
 
         <p className="text-sm text-muted-foreground">

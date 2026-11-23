@@ -154,8 +154,10 @@ function TestimonialsColumn(props: {
 
 export default function TestimonialsV2({
   id = "testimonials",
+  showVideos = true,
 }: {
   id?: string;
+  showVideos?: boolean;
 }) {
   return (
     <section
@@ -185,10 +187,10 @@ export default function TestimonialsV2({
           </h2>
         </div>
 
-        <VideoTestimonials />
+        {showVideos && <VideoTestimonials />}
 
         <div
-          className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[740px] overflow-hidden"
+          className={`flex justify-center gap-6 ${showVideos ? "mt-10" : ""} [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[740px] overflow-hidden`}
           role="region"
           aria-label="Témoignages défilants"
         >

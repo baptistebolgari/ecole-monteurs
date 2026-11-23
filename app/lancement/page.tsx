@@ -149,7 +149,7 @@ export default function LancementPage() {
             <h1 className="mx-auto text-4xl font-medium tracking-tighter text-pretty md:text-6xl">
               Lancez votre carrière de monteur vidéo spécialisé YouTube{" "}
               <span className="ul-mint">
-                avant la fin de l’année
+                en 2027
               </span>
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground text-balance">
@@ -491,7 +491,7 @@ export default function LancementPage() {
 
       <Partners />
 
-      <Testimonials id="avis-1" />
+      <Testimonials id="avis-1" showVideos={false} />
 
       <Section
         eyebrow="L’École des Monteurs : la formation"
@@ -698,7 +698,7 @@ export default function LancementPage() {
       <Testimonials />
       <Faq showCallCta />
 
-      <Footer />
+      <Footer showFacebookDisclaimer={false} />
     </main>
   );
 }
