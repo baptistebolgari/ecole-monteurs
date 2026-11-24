@@ -218,14 +218,6 @@ export default async function ElevePage({ params }: Props) {
             <blockquote className="text-xl leading-relaxed font-medium tracking-tight text-foreground text-pretty sm:text-2xl">
               « {eleve.citation.texte} »
             </blockquote>
-            <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-mint-d text-sm font-bold text-white">
-                {eleve.prenom.charAt(0)}
-              </span>
-              <span className="text-sm font-semibold text-foreground">
-                {eleve.citation.auteur}
-              </span>
-            </figcaption>
           </figure>
         </Reveal>
       </section>

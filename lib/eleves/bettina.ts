@@ -24,7 +24,7 @@ export const bettina: Eleve = {
       "**Son doute :** « Est-ce que je vais m’y plaire ou pas ? »",
     ],
   },
-  declic: "Il y a eu une forme de **déclic.**",
+  declic: "« Il y a eu une forme de **déclic.** »",
   parcours: {
     titre: "Son parcours dans l’École",
     points: [
@@ -49,7 +49,6 @@ export const bettina: Eleve = {
   citation: {
     texte:
       "Je suis sortie de cette phase où j’essayais un truc, je n’étais pas sûre de moi, je perdais beaucoup de temps. Il y a eu une forme de déclic. Je sais exactement ce que je dois faire, même si je dois recommencer, ce n’est pas grave. Je suis beaucoup plus à l’aise.",
-    auteur: "Bettina — Ce qu’elle en dit",
   },
   meta: {
     titre: "Bettina — Profil d'élève | L'École des Monteurs",

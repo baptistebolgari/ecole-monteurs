@@ -29,7 +29,7 @@ export type Eleve = {
   aujourdhui: { titre: string; points: string[] };
   avant: EleveVideo;
   apres: EleveVideo;
-  citation: { texte: string; auteur: string };
+  citation: { texte: string };
   /** Aperçu WhatsApp / réseaux (l'image est la photo de l'élève). */
   meta: { titre: string; description: string };
 };
