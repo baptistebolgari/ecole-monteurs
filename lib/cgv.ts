@@ -49,7 +49,7 @@ export const CGV: CgvArticle[] = [
           "**Version applicable :** celle en vigueur à la date de la commande. Les CGV sont accessibles en permanence sur ecole-monteurs.fr et jointes à l'e-mail de confirmation.",
           "**Consommateur ou professionnel :** certaines clauses ne visent que le consommateur (personne physique qui achète hors de son activité professionnelle) ou que le professionnel (par exemple un monteur déjà immatriculé qui achète pour son activité). Chaque article le précise.",
           "**Offres concernées :** l'« Accompagnement » (programme de 90 jours avec 12 coachings, article 3) et toute autre offre de l'École (formule allégée, contenu seul…). Le contenu exact de chaque offre figure sur sa page de vente ou son bon de commande.",
-          "**Garantie :** la Garantie Première Mission (article 8) s'applique uniquement à l'Accompagnement à 12 coachings.",
+          "**Garanties :** la Garantie Première Mission (articles 8.1 à 8.5) s'applique uniquement à l'Accompagnement à 12 coachings. La garantie remboursement 14 jours (article 8.6) s'applique uniquement à la formation vendue seule, sans coaching.",
         ],
       },
     ],
@@ -77,9 +77,9 @@ export const CGV: CgvArticle[] = [
         t: "ul",
         x: [
           "Accès à la plateforme de formation en ligne (vidéos, ressources, exercices), hébergée sur SchoolMaker.",
-          "12 coachings en visioconférence, un par semaine : coachings individuels au démarrage, puis coachings en petits groupes de niveau.",
+          "12 coachings individuels en visioconférence, un par semaine.",
           "Sessions de questions-réponses en direct et accès à la communauté des élèves.",
-          "Replays des coachings collectifs et des sessions en direct.",
+          "Replays de ses coachings et des sessions en direct.",
           "Assistance pédagogique et technique par la messagerie de la plateforme, avec une réponse sous 48 h ouvrées.",
         ],
       },
@@ -213,11 +213,11 @@ export const CGV: CgvArticle[] = [
   },
   {
     n: 8,
-    title: "Garantie Première Mission en 90 jours",
+    title: "Garanties de remboursement",
     blocks: [
       {
         t: "p",
-        x: "Si l'Élève remplit toutes les conditions de l'article 8.2 et n'a pas obtenu de Première Mission dans les 90 jours suivant son premier coaching, l'École lui rembourse 100 % des sommes versées pour l'Accompagnement.",
+        x: "**Garantie Première Mission en 90 jours.** Si l'Élève remplit toutes les conditions de l'article 8.2 et n'a pas obtenu de Première Mission dans les 90 jours suivant son premier coaching, l'École lui rembourse 100 % des sommes versées pour l'Accompagnement.",
       },
       { t: "h", x: "8.1 Définitions" },
       {
@@ -230,20 +230,37 @@ export const CGV: CgvArticle[] = [
       { t: "h", x: "8.2 Conditions" },
       {
         t: "p",
-        x: "Elles sont cumulatives et vérifiées à partir de la progression enregistrée sur la plateforme et des présences aux coachings :",
+        x: "Elles sont cumulatives et vérifiées à partir de la progression enregistrée sur la plateforme, des présences aux coachings, des exercices rendus et des justificatifs de prospection :",
       },
       {
         t: "ol",
         x: [
           "Avoir terminé 100 % des modules et exercices du parcours avant la fin de la Période de garantie.",
-          "Avoir assisté aux 12 coachings. Un coaching reporté selon l'article 7 compte s'il a lieu à la nouvelle date.",
+          "Avoir assisté à tous les coachings (12), à raison d'un par semaine. Un coaching reporté par l'École, ou reporté par l'Élève au moins 24 h à l'avance, compte s'il a lieu à la nouvelle date ; la pause prévue à l'article 7 interrompt le rythme hebdomadaire. Un coaching auquel l'Élève n'a pas assisté ne remplit pas cette condition, même s'il est considéré comme effectué en application de l'article 7.",
+          "Avoir appliqué l'ensemble des exercices et des conseils donnés pendant le parcours, y compris pour la prospection, avec au minimum 50 e-mails de prospection personnalisés envoyés ou 50 publications sur les réseaux sociaux (soit 1 à 2 par jour pendant un mois), envoyés ou publiés pendant la Période de garantie et suivant la méthode et les consignes données en coaching.",
         ],
+      },
+      {
+        t: "p",
+        x: "**Ce qui compte pour la prospection.** L'École vérifie la pertinence des e-mails et des publications au regard des critères suivants :",
+      },
+      {
+        t: "ul",
+        x: [
+          "**Un e-mail** compte s'il est un véritable e-mail de prospection pour proposer des services de montage vidéo, personnalisé pour son destinataire, et conforme à la méthode et aux consignes données en coaching.",
+          "**Une publication** compte si elle a un sens pour trouver des clients en montage vidéo (montrer son travail, son savoir-faire ou son offre) et suit les conseils et les consignes donnés en coaching.",
+          "**Ne comptent pas :** les envois en double, les messages identiques copiés-collés d'un destinataire à l'autre, et les contenus sans rapport avec le montage vidéo ou publiés seulement pour atteindre le nombre.",
+        ],
+      },
+      {
+        t: "p",
+        x: "**Preuve.** Il revient à l'Élève de prouver qu'il a réalisé ce travail. Il envoie par e-mail à contact@ecole-monteurs.fr un justificatif de ses 50 e-mails (copies ou captures montrant le destinataire, la date et le contenu) ou de ses 50 publications (liens ou captures montrant la date et le contenu). Les e-mails et les publications qui ne sont pas justifiés ou ne respectent pas les critères ci-dessus ne sont pas comptés ; l'École indique alors par écrit lesquels et pourquoi.",
       },
       { t: "h", x: "8.3 Demande de remboursement" },
       {
         t: "ol",
         x: [
-          "L'Élève envoie sa demande par e-mail à contact@ecole-monteurs.fr entre le 91e et le 120e jour suivant le premier coaching.",
+          "L'Élève envoie sa demande par e-mail à contact@ecole-monteurs.fr entre le 91e et le 120e jour suivant le premier coaching, avec le justificatif de prospection prévu à l'article 8.2.",
           "L'École vérifie les conditions sous 14 jours. Si une condition n'est pas remplie, elle indique par écrit laquelle, preuves à l'appui.",
           "Une fois la demande validée, l'École rembourse sous 14 jours, par le même moyen de paiement. Les échéances restantes sont annulées.",
         ],
@@ -256,7 +273,27 @@ export const CGV: CgvArticle[] = [
       { t: "h", x: "8.5 Portée" },
       {
         t: "p",
-        x: "La garantie s'applique uniquement à l'Accompagnement de 12 coachings et ne couvre aucune autre offre de l'École. Elle joue une seule fois par Élève. C'est une garantie commerciale : elle s'ajoute aux droits légaux de l'Élève (rétractation, conformité, article 13) et ne les réduit pas.",
+        x: "La Garantie Première Mission s'applique uniquement à l'Accompagnement de 12 coachings et ne couvre aucune autre offre de l'École. Elle joue une seule fois par Élève. C'est une garantie commerciale : elle s'ajoute aux droits légaux de l'Élève (rétractation, conformité, article 13) et ne les réduit pas.",
+      },
+      { t: "h", x: "8.6 Garantie remboursement 14 jours (formation sans coaching)" },
+      {
+        t: "p",
+        x: "Cette garantie s'applique à la formation vendue seule, sans coaching. L'Élève peut se faire rembourser les sommes versées si les deux conditions suivantes sont réunies :",
+      },
+      {
+        t: "ol",
+        x: [
+          "La demande est envoyée dans les 14 jours suivant l'achat.",
+          "L'Élève a regardé moins de 20 % de la formation. S'il en a regardé 20 % ou plus dans ces 14 jours, il ne peut pas être remboursé au titre de cette garantie.",
+        ],
+      },
+      {
+        t: "p",
+        x: "La part regardée est mesurée à partir de la progression enregistrée sur la plateforme. La demande s'envoie par e-mail à contact@ecole-monteurs.fr. Le remboursement intervient sous 14 jours, par le même moyen de paiement. Les échéances restantes sont annulées et l'accès à la formation est fermé.",
+      },
+      {
+        t: "p",
+        x: "C'est une garantie commerciale : elle s'ajoute aux droits légaux de l'Élève et ne les réduit pas. En particulier, la limite de 20 % ne s'applique pas au droit de rétractation prévu à l'article 6.",
       },
     ],
   },
@@ -270,7 +307,7 @@ export const CGV: CgvArticle[] = [
         x: [
           "suivre le parcours avec assiduité et réaliser les exercices demandés ;",
           "respecter les autres élèves et l'équipe : aucun propos insultant ou discriminatoire, aucun démarchage commercial dans la communauté ;",
-          "garder confidentielles les informations personnelles partagées par les autres élèves pendant les coachings collectifs.",
+          "garder confidentielles les informations personnelles partagées par les autres élèves pendant les sessions en direct et dans la communauté.",
         ],
       },
     ],
@@ -374,9 +411,9 @@ export const CGV: CgvArticle[] = [
       {
         t: "ul",
         x: [
-          "**Données traitées :** identité, coordonnées, progression sur la plateforme, tableau de suivi de prospection, enregistrements des coachings. Les données de carte bancaire sont traitées par le prestataire de paiement et ne sont pas conservées par l'École.",
+          "**Données traitées :** identité, coordonnées, progression sur la plateforme, tableau de suivi de prospection, justificatifs de prospection transmis pour la garantie, enregistrements des coachings. Les données de carte bancaire sont traitées par le prestataire de paiement et ne sont pas conservées par l'École.",
           "**Finalités :** exécuter le contrat (formation, coachings, garantie), respecter les obligations légales (facturation, comptabilité), gérer les réclamations. L'utilisation d'un témoignage ou l'envoi d'offres commerciales hors formation repose sur le consentement de l'Élève.",
-          "**Enregistrement des coachings :** les coachings sont enregistrés et transcrits avec Fathom, pour fournir les replays, assurer le suivi pédagogique et vérifier les conditions de la garantie. Le replay d'un coaching collectif est visible par les élèves du groupe. L'Élève peut couper sa caméra. Les enregistrements sont conservés 12 mois après la fin de l'accompagnement.",
+          "**Enregistrement des coachings :** les coachings sont enregistrés et transcrits avec Fathom, pour fournir les replays, assurer le suivi pédagogique et vérifier les conditions de la garantie. Le replay d'un coaching individuel est réservé à l'Élève concerné ; les replays des sessions en direct sont visibles par les élèves. L'Élève peut couper sa caméra. Les enregistrements sont conservés 12 mois après la fin de l'accompagnement.",
           "**Prestataires :** SchoolMaker (plateforme), Stripe (paiement), Fillout (formulaires), Fathom (enregistrement), Google (suivi), Make (automatisations), WhatsApp (messages). Les transferts hors de l'Union européenne sont encadrés par des garanties appropriées.",
           "**Durées :** données du contrat conservées 3 ans après sa fin, ou jusqu'à la fin d'un litige en cours ; pièces comptables 10 ans.",
           "**Droits :** accès, rectification, effacement, limitation, opposition et portabilité, à exercer à contact@ecole-monteurs.fr. L'Élève peut saisir la CNIL (cnil.fr).",

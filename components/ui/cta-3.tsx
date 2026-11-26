@@ -14,7 +14,14 @@ export function CallToAction() {
             Après avoir suivi en intégralité L&apos;École Des Monteurs, nous
             vous garantissons que vous trouverez un client dans les 90 jours,
             ou vous pourrez demander un remboursement intégral de la
-            formation.
+            formation.{" "}
+            <a
+              href="/cgv#article-8"
+              className="underline underline-offset-[3px] hover:text-foreground"
+            >
+              Voir les conditions de la garantie
+            </a>
+            .
           </p>
           <p className="text-muted-foreground">
             Vous ne prenez aucun risque. Si ce n&apos;est celui de changer

@@ -87,7 +87,10 @@ const GARANTIE: ReactNode[] = [
   <>
     <strong className="font-semibold text-foreground">Condition :</strong>{" "}
     suivre l’accompagnement complet jusqu’au bout, c’est-à-dire tous les
-    coachings et 100 % du parcours, exercices compris.
+    coachings (un par semaine) et 100 % du parcours, exercices compris, et
+    appliquer les conseils donnés, notamment pour la prospection : au minimum
+    50 e-mails personnalisés envoyés ou 50 publications sur les réseaux sociaux
+    (soit 1 à 2 par jour pendant un mois), justificatif à l’appui.
   </>,
   <>
     <strong className="font-semibold text-foreground">

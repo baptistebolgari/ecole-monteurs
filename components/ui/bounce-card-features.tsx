@@ -26,7 +26,7 @@ const CARDS: FeatureCard[] = [
   {
     title: "Coaching",
     description:
-      "Douze semaines d'accompagnement avec Baptiste, en individuel puis en avec un retour personnalisé sur chacun de vos montages.",
+      "Douze semaines d'accompagnement avec Baptiste, en individuel, avec un retour personnalisé sur chacun de vos montages.",
     panel: SOFT,
     text: "text-[#131316]",
     span: "col-span-12 md:col-span-8",
