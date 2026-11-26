@@ -5,11 +5,22 @@ export function getDriveFileId(url: string): string | null {
 }
 
 /** Lecteur Google Drive 16:9, chargement différé. */
-export function DriveEmbed({ url, title }: { url: string; title: string }) {
+export function DriveEmbed({
+  url,
+  title,
+  vertical = false,
+}: {
+  url: string;
+  title: string;
+  /** Format 9:16 (Short, Reel). */
+  vertical?: boolean;
+}) {
   const id = getDriveFileId(url);
   if (!id) return null;
   return (
-    <div className="relative aspect-video overflow-hidden rounded-2xl border border-border bg-[#131316]">
+    <div
+      className={`relative ${vertical ? "aspect-[9/16]" : "aspect-video"} overflow-hidden rounded-2xl border border-border bg-[#131316]`}
+    >
       <iframe
         src={`https://drive.google.com/file/d/${id}/preview`}
         title={title}

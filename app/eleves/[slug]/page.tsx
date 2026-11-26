@@ -343,16 +343,24 @@ export default async function ElevePage({ params }: Props) {
             <h2 className="text-center text-3xl font-bold tracking-[-0.04em] text-balance text-foreground sm:text-4xl">
               {eleve.exemple.titre}
             </h2>
-            <div className="w-full">
+            <div
+              className={
+                eleve.exemple.format === "vertical"
+                  ? "w-full max-w-[340px]"
+                  : "w-full"
+              }
+            >
               {getYoutubeId(eleve.exemple.url) ? (
                 <YoutubeEmbed
                   url={eleve.exemple.url}
                   title={`${eleve.prenom} — ${eleve.exemple.titre}`}
+                  vertical={eleve.exemple.format === "vertical"}
                 />
               ) : (
                 <DriveEmbed
                   url={eleve.exemple.url}
                   title={`${eleve.prenom} — ${eleve.exemple.titre}`}
+                  vertical={eleve.exemple.format === "vertical"}
                 />
               )}
             </div>

@@ -62,7 +62,7 @@ export type Eleve = {
    * Exemple de travail à la fin de la page : lien YouTube (recommandé) ou lien
    * d’un fichier vidéo Google Drive (la lecture sans compte Google n’est pas garantie).
    */
-  exemple?: { titre: string; url: string };
+  exemple?: { titre: string; url: string; format?: "vertical" };
   /** Aperçu WhatsApp / réseaux (l'image est la photo de l'élève). */
   meta: { titre: string; description: string };
 };
