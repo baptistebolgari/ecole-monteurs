@@ -13,7 +13,7 @@ export const florian: Eleve = {
     width: 1200,
     height: 919,
   },
-  grandTitre: {
+  citation: {
     texte:
       "De base, j’étais perdu dans le logiciel, et maintenant tout est vraiment **plus simple et plus rapide**.",
     auteur: "Florian",

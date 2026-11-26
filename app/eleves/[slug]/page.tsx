@@ -137,14 +137,34 @@ function Fleches() {
   );
 }
 
-function Citation({ texte }: { texte: string }) {
+/**
+ * Citation en grand, entre guillemets français, avec le prénom en dessous.
+ * Les citations longues sont affichées un peu plus petites pour rester lisibles.
+ */
+function Citation({
+  citation,
+}: {
+  citation: NonNullable<Eleve["citation"]>;
+}) {
+  const longue = citation.texte.length > 160;
   return (
-    <section className="mx-auto w-full max-w-3xl px-4 py-14 sm:py-20">
+    <section className="mx-auto w-full max-w-3xl px-4 py-16 text-center sm:py-24">
       <Reveal>
-        <figure className="rounded-3xl border border-mint-d/40 border-t-4 border-t-mint-d bg-card p-7 sm:p-10">
-          <blockquote className="text-xl leading-relaxed font-medium tracking-tight text-foreground text-pretty sm:text-2xl">
-            « {texte} »
+        <figure>
+          <blockquote>
+            <h2
+              className={`font-bold text-balance text-foreground ${
+                longue
+                  ? "text-2xl leading-snug tracking-[-0.03em] sm:text-[30px] sm:leading-[1.3]"
+                  : "text-3xl tracking-[-0.04em] sm:text-[44px] sm:leading-[1.15]"
+              }`}
+            >
+              «&nbsp;{rich(citation.texte, "hl-mint font-bold text-foreground")}&nbsp;»
+            </h2>
           </blockquote>
+          <figcaption className="mt-5 text-sm font-medium text-muted-foreground">
+            — {citation.auteur}
+          </figcaption>
         </figure>
       </Reveal>
     </section>
@@ -254,26 +274,8 @@ export default async function ElevePage({ params }: Props) {
         />
       </Reveal>
 
-      {/* Citation en carte (facultative) */}
-      {eleve.citation && <Citation texte={eleve.citation.texte} />}
-
-      {/* Citation en grand titre (facultative) */}
-      {eleve.grandTitre && (
-        <section className="mx-auto w-full max-w-3xl px-4 py-16 text-center sm:py-24">
-          <Reveal>
-            <figure>
-              <blockquote>
-                <h2 className="text-3xl font-bold tracking-[-0.04em] text-balance text-foreground sm:text-[44px] sm:leading-[1.15]">
-                  «&nbsp;{rich(eleve.grandTitre.texte, "hl-mint font-bold text-foreground")}&nbsp;»
-                </h2>
-              </blockquote>
-              <figcaption className="mt-5 text-sm font-medium text-muted-foreground">
-                — {eleve.grandTitre.auteur}
-              </figcaption>
-            </figure>
-          </Reveal>
-        </section>
-      )}
+      {/* Citation de l’élève (facultative) */}
+      {eleve.citation && <Citation citation={eleve.citation} />}
 
       {/* Au départ → Pendant les coachings → Les résultats */}
       <section className="mx-auto w-full max-w-3xl px-4 lg:max-w-6xl">

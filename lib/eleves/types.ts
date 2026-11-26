@@ -1,6 +1,6 @@
 // Modèle d'une page « profil d'élève » (/eleves/[slug]).
 // Dans les trois blocs, **mots** = gras simple.
-// Dans « grandTitre », **mots** = gras surligné en vert.
+// Dans la citation, **mots** = gras surligné en vert.
 
 export type EleveVideo = {
   /** Libellé affiché au-dessus du lecteur. */
@@ -44,8 +44,6 @@ export type Eleve = {
     width: number;
     height: number;
   };
-  /** Citation de l’élève en grand titre, sous la photo (facultatif, sans les guillemets). */
-  grandTitre?: { texte: string; auteur: string };
   /** Bloc « Au départ ». */
   depart: TroisLignes;
   /** Bloc « Pendant les coachings ». */
@@ -58,8 +56,8 @@ export type Eleve = {
   apres: EleveVideo;
   /** Facultatif : sans cette carte, rien ne s’affiche. */
   chaine?: EleveChaine;
-  /** Citation en carte, sous la photo (facultative). */
-  citation?: { texte: string };
+  /** Citation de l’élève en grand, sous la photo (facultative, sans les guillemets). */
+  citation?: { texte: string; auteur: string };
   /**
    * Exemple de travail à la fin de la page : lien YouTube (recommandé) ou lien
    * d’un fichier vidéo Google Drive (la lecture sans compte Google n’est pas garantie).

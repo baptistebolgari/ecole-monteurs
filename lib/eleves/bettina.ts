@@ -43,7 +43,8 @@ export const bettina: Eleve = {
   apres: { label: "", url: "" },
   citation: {
     texte:
-      "Je suis sortie de cette phase où j’essayais un truc, je n’étais pas sûre de moi, je perdais beaucoup de temps. Il y a eu une forme de déclic. Je sais exactement ce que je dois faire, même si je dois recommencer, ce n’est pas grave. Je suis beaucoup plus à l’aise.",
+      "Je suis sortie de cette phase où j’essayais un truc, je n’étais pas sûre de moi, je perdais beaucoup de temps. Il y a eu une forme de **déclic**. Je sais exactement ce que je dois faire, même si je dois recommencer, ce n’est pas grave. Je suis beaucoup plus à l’aise.",
+    auteur: "Bettina",
   },
   meta: {
     titre: "Bettina — Profil d'élève | L'École des Monteurs",

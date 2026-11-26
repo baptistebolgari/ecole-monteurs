@@ -66,7 +66,8 @@ export const thomas: Eleve = {
   apres: { label: "", url: "" },
   citation: {
     texte:
-      "Jusqu’à maintenant, je faisais le truc un peu amateur de mettre la musique tout le temps pareil. […] Le montage, j’ai fait un effort. J’ai mis en place tout ce qu’on a vu. Et même moi, quand je regarde l’intro, je suis content, parce qu’au moins c’est dynamique.",
+      "Jusqu’à maintenant, je faisais le truc un peu amateur de mettre la musique tout le temps pareil. […] Le montage, j’ai fait un effort. J’ai mis en place tout ce qu’on a vu. Et même moi, quand je regarde l’intro, je suis content, parce qu’au moins **c’est dynamique**.",
+    auteur: "Thomas",
   },
   meta: {
     titre: "Thomas — Profil d'élève | L'École des Monteurs",
