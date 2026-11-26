@@ -7,7 +7,8 @@ import Footer from "@/components/footer";
 import { Reveal } from "@/components/sales/reveal";
 import { YoutubeEmbed, getYoutubeId } from "@/components/eleves/youtube-embed";
 import { ELEVES, getEleve } from "@/lib/eleves";
-import type { Eleve, TroisLignes } from "@/lib/eleves/types";
+import type { Eleve, EleveChaine, TroisLignes } from "@/lib/eleves/types";
+import { Button } from "@/components/ui/button";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -135,6 +136,69 @@ function Fleches() {
   );
 }
 
+function Citation({ texte }: { texte: string }) {
+  return (
+    <section className="mx-auto w-full max-w-3xl px-4 py-14 sm:py-20">
+      <Reveal>
+        <figure className="rounded-3xl border border-mint-d/40 border-t-4 border-t-mint-d bg-card p-7 sm:p-10">
+          <blockquote className="text-xl leading-relaxed font-medium tracking-tight text-foreground text-pretty sm:text-2xl">
+            « {texte} »
+          </blockquote>
+        </figure>
+      </Reveal>
+    </section>
+  );
+}
+
+/** Carte verte pleine largeur : images légendées, vidéo et lien vers la chaîne. */
+function Chaine({ chaine }: { chaine: EleveChaine }) {
+  return (
+    <section className="mx-auto w-full max-w-3xl px-4 pt-6 lg:max-w-6xl">
+      <Reveal>
+        <div className="flex flex-col items-center gap-6 rounded-3xl border border-mint-d/40 bg-mint/20 p-6 sm:p-8">
+          {chaine.images.length > 0 && (
+            <div
+              className={`grid w-full items-start gap-4 ${chaine.images.length > 1 ? "max-w-2xl sm:grid-cols-2" : "max-w-md"}`}
+            >
+              {chaine.images.map((image) => (
+                <figure key={image.src} className="flex flex-col gap-2">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    loading="lazy"
+                    className="h-auto w-full rounded-2xl border border-border bg-white"
+                  />
+                  {image.legende && (
+                    <figcaption className="text-center text-sm text-muted-foreground">
+                      {image.legende}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          )}
+          {chaine.video && (
+            <div className="w-full max-w-md">
+              <YoutubeEmbed url={chaine.video.url} title={chaine.video.titre} />
+            </div>
+          )}
+          <Button size="lg" asChild>
+            <a
+              href={chaine.bouton.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {chaine.bouton.label} <ArrowRight className="size-4" />
+            </a>
+          </Button>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
 export default async function ElevePage({ params }: Props) {
   const eleve = getEleve((await params).slug);
   if (!eleve) notFound();
@@ -190,15 +254,7 @@ export default async function ElevePage({ params }: Props) {
       </Reveal>
 
       {/* Citation */}
-      <section className="mx-auto w-full max-w-3xl px-4 py-14 sm:py-20">
-        <Reveal>
-          <figure className="rounded-3xl border border-mint-d/40 border-t-4 border-t-mint-d bg-card p-7 sm:p-10">
-            <blockquote className="text-xl leading-relaxed font-medium tracking-tight text-foreground text-pretty sm:text-2xl">
-              « {eleve.citation.texte} »
-            </blockquote>
-          </figure>
-        </Reveal>
-      </section>
+      <Citation texte={eleve.citation.texte} />
 
       {/* Au départ → Pendant les coachings → Les résultats */}
       <section className="mx-auto w-full max-w-3xl px-4 lg:max-w-6xl">
@@ -221,6 +277,9 @@ export default async function ElevePage({ params }: Props) {
           </div>
         </Reveal>
       </section>
+
+      {/* Sa chaîne YouTube (facultatif) */}
+      {eleve.chaine && <Chaine chaine={eleve.chaine} />}
 
       {/* Avant / Après : masqué si aucun lien vidéo */}
       {videos.length > 0 && (
