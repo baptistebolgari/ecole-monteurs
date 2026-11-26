@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import Footer from "@/components/footer";
 import { Reveal } from "@/components/sales/reveal";
 import { YoutubeEmbed, getYoutubeId } from "@/components/eleves/youtube-embed";
+import { DriveEmbed, getDriveFileId } from "@/components/eleves/drive-embed";
 import { ELEVES, getEleve } from "@/lib/eleves";
 import type { Eleve, EleveChaine, TroisLignes } from "@/lib/eleves/types";
 import { Button } from "@/components/ui/button";
@@ -253,8 +254,26 @@ export default async function ElevePage({ params }: Props) {
         />
       </Reveal>
 
-      {/* Citation */}
-      <Citation texte={eleve.citation.texte} />
+      {/* Citation en carte (facultative) */}
+      {eleve.citation && <Citation texte={eleve.citation.texte} />}
+
+      {/* Citation en grand titre (facultative) */}
+      {eleve.grandTitre && (
+        <section className="mx-auto w-full max-w-3xl px-4 py-16 text-center sm:py-24">
+          <Reveal>
+            <figure>
+              <blockquote>
+                <h2 className="text-3xl font-bold tracking-[-0.04em] text-balance text-foreground sm:text-[44px] sm:leading-[1.15]">
+                  «&nbsp;{rich(eleve.grandTitre.texte, "hl-mint font-bold text-foreground")}&nbsp;»
+                </h2>
+              </blockquote>
+              <figcaption className="mt-5 text-sm font-medium text-muted-foreground">
+                — {eleve.grandTitre.auteur}
+              </figcaption>
+            </figure>
+          </Reveal>
+        </section>
+      )}
 
       {/* Au départ → Pendant les coachings → Les résultats */}
       <section className="mx-auto w-full max-w-3xl px-4 lg:max-w-6xl">
@@ -310,6 +329,39 @@ export default async function ElevePage({ params }: Props) {
                 </figure>
               ))}
             </div>
+          </Reveal>
+        </section>
+      )}
+
+      {/* Exemple de travail (facultatif) */}
+      {eleve.exemple &&
+        (getYoutubeId(eleve.exemple.url) || getDriveFileId(eleve.exemple.url)) && (
+        <section className="mx-auto w-full max-w-3xl px-4 pt-16 sm:pt-20">
+          <Reveal className="flex flex-col items-center gap-6">
+            <h2 className="text-center text-3xl font-bold tracking-[-0.04em] text-balance text-foreground sm:text-4xl">
+              {eleve.exemple.titre}
+            </h2>
+            <div className="w-full">
+              {getYoutubeId(eleve.exemple.url) ? (
+                <YoutubeEmbed
+                  url={eleve.exemple.url}
+                  title={`${eleve.prenom} — ${eleve.exemple.titre}`}
+                />
+              ) : (
+                <DriveEmbed
+                  url={eleve.exemple.url}
+                  title={`${eleve.prenom} — ${eleve.exemple.titre}`}
+                />
+              )}
+            </div>
+            <a
+              href={eleve.exemple.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+            >
+              La vidéo ne se lance pas ? L’ouvrir dans un nouvel onglet
+            </a>
           </Reveal>
         </section>
       )}
