@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import { Reveal } from "@/components/sales/reveal";
 import { YoutubeEmbed, getYoutubeId } from "@/components/eleves/youtube-embed";
 import { ELEVES, getEleve } from "@/lib/eleves";
+import type { Eleve, TroisLignes } from "@/lib/eleves/types";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -53,11 +54,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/** **mot** → gras surligné en vert. */
-function rich(text: string): ReactNode[] {
+/** Met les **mots** en gras, avec la classe demandée. */
+function rich(text: string, className: string): ReactNode[] {
   return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
     part.startsWith("**") ? (
-      <strong key={i} className="hl-mint font-bold text-foreground">
+      <strong key={i} className={className}>
         {part.slice(2, -2)}
       </strong>
     ) : (
@@ -66,16 +67,71 @@ function rich(text: string): ReactNode[] {
   );
 }
 
-function Bullets({ points }: { points: string[] }) {
+const CARTE_GRISE = "border-border bg-card";
+const CARTE_VERTE = "border-mint-d/40 bg-mint/20";
+
+/**
+ * Un bloc : titre + 3 lignes numérotées. Sur ordinateur, ses 4 rangées sont
+ * partagées avec les blocs voisins (subgrid) pour aligner les lignes.
+ */
+function Bloc({
+  titre,
+  lignes,
+  carte,
+  photo,
+}: {
+  titre: string;
+  lignes: TroisLignes;
+  carte: string;
+  photo?: Eleve["photoCoaching"];
+}) {
   return (
-    <ul className="space-y-3.5">
-      {points.map((point) => (
-        <li key={point} className="flex gap-3">
-          <ArrowRight className="mt-1 size-4 shrink-0 text-mint-d" />
-          <span>{rich(point)}</span>
-        </li>
+    <div
+      className={`rounded-3xl border p-6 lg:grid lg:grid-rows-subgrid ${photo ? "lg:row-span-5" : "lg:row-span-4 lg:self-stretch"} ${carte}`}
+    >
+      <h2 className="text-2xl font-bold tracking-[-0.035em] text-balance text-foreground lg:text-[22px]">
+        {titre}
+      </h2>
+      <ol className="lg:row-span-3 lg:grid lg:grid-rows-subgrid">
+        {lignes.map((ligne, i) => (
+          <li key={ligne} className="flex items-start gap-3 pt-5">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-mint text-[13px] font-bold text-[#131316]">
+              {i + 1}
+            </span>
+            <span className="text-base leading-relaxed text-muted-foreground lg:text-[15px]">
+              {rich(ligne, "font-semibold text-foreground")}
+            </span>
+          </li>
+        ))}
+      </ol>
+      {photo && (
+        <img
+          src={photo.src}
+          alt={photo.alt}
+          width={photo.width}
+          height={photo.height}
+          loading="lazy"
+          className="mt-5 h-auto w-full self-start rounded-xl border border-border"
+        />
+      )}
+    </div>
+  );
+}
+
+/** Colonne de flèches : une par ligne, à la hauteur des numéros (ordinateur). */
+function Fleches() {
+  return (
+    <div
+      aria-hidden="true"
+      className="hidden border-y border-transparent py-6 lg:row-span-4 lg:grid lg:grid-rows-subgrid"
+    >
+      <span />
+      {[0, 1, 2].map((i) => (
+        <span key={i} className="flex h-12 items-end self-start pb-1.5">
+          <ArrowRight className="size-4 text-mint-d" />
+        </span>
       ))}
-    </ul>
+    </div>
   );
 }
 
@@ -123,7 +179,7 @@ export default async function ElevePage({ params }: Props) {
       </section>
 
       {/* Photo de l'appel, affichée telle quelle */}
-      <Reveal className="mx-auto w-full max-w-3xl px-4">
+      <Reveal className="mx-auto w-full max-w-lg px-4">
         <img
           src={eleve.photo.src}
           alt={eleve.photo.alt}
@@ -133,47 +189,35 @@ export default async function ElevePage({ params }: Props) {
         />
       </Reveal>
 
-      {/* Au départ */}
-      <section className="mx-auto w-full max-w-3xl px-4 pt-14">
-        <Reveal className="rounded-3xl border border-border p-6 sm:p-8">
-          <h2 className="text-2xl font-bold tracking-[-0.035em] text-foreground sm:text-3xl">
-            {eleve.depart.titre}
-          </h2>
-          <div className="mt-5 text-base leading-relaxed text-muted-foreground">
-            <Bullets points={eleve.depart.points} />
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Grand titre */}
-      <section className="mx-auto w-full max-w-3xl px-4 py-16 text-center sm:py-24">
+      {/* Citation */}
+      <section className="mx-auto w-full max-w-3xl px-4 py-14 sm:py-20">
         <Reveal>
-          <h2 className="text-4xl font-bold tracking-[-0.045em] text-balance text-foreground sm:text-6xl sm:leading-[1.08]">
-            {rich(eleve.declic)}
-          </h2>
+          <figure className="rounded-3xl border border-mint-d/40 border-t-4 border-t-mint-d bg-card p-7 sm:p-10">
+            <blockquote className="text-xl leading-relaxed font-medium tracking-tight text-foreground text-pretty sm:text-2xl">
+              « {eleve.citation.texte} »
+            </blockquote>
+          </figure>
         </Reveal>
       </section>
 
-      {/* Parcours (carte grise) */}
-      <section className="mx-auto w-full max-w-3xl px-4">
-        <Reveal className="rounded-3xl border border-border bg-card p-6 sm:p-8">
-          <h2 className="text-2xl font-bold tracking-[-0.035em] text-foreground sm:text-3xl">
-            {eleve.parcours.titre}
-          </h2>
-          <div className="mt-5 text-base leading-relaxed text-muted-foreground">
-            <Bullets points={eleve.parcours.points} />
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Aujourd'hui (carte verte) */}
-      <section className="mx-auto w-full max-w-3xl px-4 pt-6">
-        <Reveal className="rounded-3xl border border-mint-d/40 bg-mint/20 p-6 sm:p-8">
-          <h2 className="text-2xl font-bold tracking-[-0.035em] text-foreground sm:text-3xl">
-            {eleve.aujourdhui.titre}
-          </h2>
-          <div className="mt-5 text-base leading-relaxed text-muted-foreground">
-            <Bullets points={eleve.aujourdhui.points} />
+      {/* Au départ → Pendant les coachings → Les résultats */}
+      <section className="mx-auto w-full max-w-3xl px-4 lg:max-w-6xl">
+        <Reveal>
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto_1fr_auto_1fr] lg:grid-rows-[repeat(5,auto)] lg:gap-x-3 lg:gap-y-0">
+            <Bloc titre="Au départ" lignes={eleve.depart} carte={CARTE_GRISE} />
+            <Fleches />
+            <Bloc
+              titre="Pendant les coachings"
+              lignes={eleve.coachings}
+              carte={CARTE_GRISE}
+              photo={eleve.photoCoaching}
+            />
+            <Fleches />
+            <Bloc
+              titre="Les résultats"
+              lignes={eleve.resultats}
+              carte={CARTE_VERTE}
+            />
           </div>
         </Reveal>
       </section>
@@ -211,18 +255,9 @@ export default async function ElevePage({ params }: Props) {
         </section>
       )}
 
-      {/* Citation */}
-      <section className="mx-auto w-full max-w-3xl px-4 py-16 sm:py-24">
-        <Reveal>
-          <figure className="rounded-3xl border border-mint-d/40 border-t-4 border-t-mint-d bg-card p-7 sm:p-10">
-            <blockquote className="text-xl leading-relaxed font-medium tracking-tight text-foreground text-pretty sm:text-2xl">
-              « {eleve.citation.texte} »
-            </blockquote>
-          </figure>
-        </Reveal>
-      </section>
-
-      <Footer showFacebookDisclaimer={false} />
+      <div className="pt-16 sm:pt-24">
+        <Footer showFacebookDisclaimer={false} />
+      </div>
     </main>
   );
 }

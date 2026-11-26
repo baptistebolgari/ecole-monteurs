@@ -1,5 +1,5 @@
 // Modèle d'une page « profil d'élève » (/eleves/[slug]).
-// Dans les textes, **mot** = gras surligné en vert.
+// Dans les trois blocs, **mots** = gras simple.
 
 export type EleveVideo = {
   /** Libellé affiché au-dessus du lecteur. */
@@ -7,6 +7,9 @@ export type EleveVideo = {
   /** Lien YouTube (non répertorié). Vide = la vidéo n'est pas affichée. */
   url: string;
 };
+
+/** Exactement 3 lignes : la ligne 1 d’un bloc répond à la ligne 1 des autres. */
+export type TroisLignes = [string, string, string];
 
 export type Eleve = {
   slug: string;
@@ -22,11 +25,14 @@ export type Eleve = {
     width: number;
     height: number;
   };
-  depart: { titre: string; points: string[] };
-  /** Grand titre de section. */
-  declic: string;
-  parcours: { titre: string; points: string[] };
-  aujourdhui: { titre: string; points: string[] };
+  /** Bloc « Au départ ». */
+  depart: TroisLignes;
+  /** Bloc « Pendant les coachings ». */
+  coachings: TroisLignes;
+  /** Capture affichée en petit sous les 3 lignes des coachings (facultative). */
+  photoCoaching?: { src: string; alt: string; width: number; height: number };
+  /** Bloc « Les résultats ». */
+  resultats: TroisLignes;
   avant: EleveVideo;
   apres: EleveVideo;
   citation: { texte: string };

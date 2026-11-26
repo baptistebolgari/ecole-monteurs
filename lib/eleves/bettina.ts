@@ -15,33 +15,28 @@ export const bettina: Eleve = {
     width: 1200,
     height: 809,
   },
-  depart: {
-    titre: "Au départ",
-    points: [
-      "Elle avait seulement bricolé quelques montages pour elle, rien de professionnel.",
-      "Elle travaillait sur un vieil ordinateur qui rame.",
-      "Ses premières vidéos mettaient les images « façon PowerPoint », avec des bandes noires.",
-      "**Son doute :** « Est-ce que je vais m’y plaire ou pas ? »",
-    ],
+  depart: [
+    "Ses premiers montages faisaient amateur : images « façon PowerPoint », bandes noires.",
+    "Elle tâtonnait, n’était pas sûre d’elle et perdait beaucoup de temps.",
+    "Elle ne savait pas si le métier allait lui plaire, ni comment trouver des clients.",
+  ],
+  coachings: [
+    "**Un cahier des charges précis pour chaque exercice**, comme une vraie commande client.",
+    "**La méthode en 3 couches** : dérush, illustrations, habillage. Toujours dans le même ordre.",
+    "**Un plan de lancement** : portfolio, vidéo de présentation, puis démarchage de son réseau.",
+  ],
+  // Nom de famille flouté dans l'image elle-même.
+  photoCoaching: {
+    src: "/eleves/bettina/coaching.jpg",
+    alt: "Coaching entre Bettina et Baptiste sur un exercice de montage dans Premiere Pro",
+    width: 1200,
+    height: 599,
   },
-  declic: "« Il y a eu une forme de **déclic.** »",
-  parcours: {
-    titre: "Son parcours dans l’École",
-    points: [
-      "Des coachings individuels, à son rythme, en plus de son travail.",
-      "Elle apprend à raconter une histoire avec ses images.",
-      "Elle refait le même exercice cinq fois, jusqu’à en être contente.",
-      "**Résultat :** elle maîtrise le dérush, le rythme et le sound design.",
-    ],
-  },
-  aujourdhui: {
-    titre: "Aujourd’hui",
-    points: [
-      "Elle monte des intros YouTube, des Shorts et des teasers de podcast.",
-      "Sa vidéo de présentation est prête, et son portfolio est en cours.",
-      "**Prochaine étape :** démarcher les entreprises de son réseau, en français et en allemand.",
-    ],
-  },
+  resultats: [
+    "Un niveau technique validé pour proposer des prestations payantes.",
+    "Elle sait exactement quoi faire, et dans quel ordre.",
+    "« C’est très créatif et j’adore ça. » Sa vidéo de présentation est prête pour démarcher son réseau.",
+  ],
   // À compléter : libellés et liens YouTube non répertoriés.
   // Tant qu'un lien est vide, la vidéo (et la section si les deux sont vides) n'apparaît pas.
   avant: { label: "", url: "" },
