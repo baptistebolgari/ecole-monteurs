@@ -33,9 +33,6 @@ export default function LancementFerme() {
           <h1 className="text-3xl font-bold tracking-[-0.04em] text-balance text-foreground sm:text-4xl">
             L’école n’est plus accessible sur cette page.
           </h1>
-          <p className="text-lg text-muted-foreground">
-            Pour prendre rendez-vous :
-          </p>
           <Button size="lg" asChild>
             <a href={RENDEZ_VOUS}>
               Prendre rendez-vous <ArrowRight className="size-4" />
